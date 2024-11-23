@@ -153,7 +153,7 @@ GameObject:
   - component: {fileID: 3771491824329135381}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -186,6 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd7e3f55a7b9eed41b532203bf88fb47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactable: 1
   speed: 5
 --- !u!33 &3885617317531437609
 MeshFilter:
@@ -285,5 +286,5 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 116
   m_CollisionDetection: 0

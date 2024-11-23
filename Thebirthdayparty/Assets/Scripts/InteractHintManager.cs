@@ -1,18 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using QFramework;
 
-public class InteractHintManager : MonoBehaviour
+public class InteractHintManager : MonoSingleton<InteractHintManager>
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public GameObject Icon;
+    public GameObject Player;
+    public float Range;
+    public GameObject AllocIcon(){
+        return Instantiate(Icon,transform);
     }
 }
