@@ -14,7 +14,7 @@ namespace Interactable
             Obtainable,
             Invalid
         }
-        public int id;
+        public string id;
         public string obj_name;
         public Type type;
         public GameObject prefab;
