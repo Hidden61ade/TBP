@@ -23,6 +23,18 @@ public class Script : MonoBehaviour
         controlledObj.rotation = temp.rotation;
         TypeEventSystem.Global.Send<InteractStart>();
         StartCoroutine(GoToComputer());
+
+        TypeEventSystem.Global.Register<OnSceneLoadedEvent>(e =>
+        {
+            controlledCam.depth = -1;
+            controlledCam.fieldOfView = 60;
+            controlledObj.position = startPos;
+            controlledObj.rotation = startRot;
+        }).UnRegisterWhenGameObjectDestroyed(gameObject);
+        TypeEventSystem.Global.Register<InteractEnd>(e =>
+        {
+            InteractHintManager.Instance.gameObject.SetActive(true);
+        }).UnRegisterWhenGameObjectDestroyed(gameObject);
     }
     IEnumerator GoToComputer()
     {
@@ -34,8 +46,8 @@ public class Script : MonoBehaviour
             controlledObj.position = Vector3.Lerp(controlledObj.position, startPos, 0.04f);
             controlledObj.rotation = Quaternion.Lerp(controlledObj.rotation, startRot, 0.04f);
             yield return null;
-            if ((controlledObj.rotation.eulerAngles - startRot.eulerAngles).magnitude < 0.02 &&
-                (controlledObj.position - startPos).magnitude < 0.02)
+            if ((controlledObj.rotation.eulerAngles - startRot.eulerAngles).magnitude < 0.08 &&
+                (controlledObj.position - startPos).magnitude < 0.08)
             {
                 controlledObj.position = startPos;
                 controlledObj.rotation = startRot;
@@ -54,5 +66,6 @@ public class Script : MonoBehaviour
                 break;
             }
         }
+        SceneController.Instance.LoadSceneAdditive("Computer");
     }
 }
