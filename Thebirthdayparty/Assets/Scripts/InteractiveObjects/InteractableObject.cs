@@ -25,7 +25,6 @@ namespace Interactable
         #endregion
         public void OnTriggered()
         {
-            Debug.Log("Triggered");
             temp = Instantiate(interactiveData.prefab, transform);
         }
 

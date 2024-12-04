@@ -26,13 +26,14 @@ public class Script : MonoBehaviour
 
         TypeEventSystem.Global.Register<OnSceneLoadedEvent>(e =>
         {
+
+        }).UnRegisterWhenGameObjectDestroyed(gameObject);
+        TypeEventSystem.Global.Register<InteractEnd>(e =>
+        {
             controlledCam.depth = -1;
             controlledCam.fieldOfView = 60;
             controlledObj.position = startPos;
             controlledObj.rotation = startRot;
-        }).UnRegisterWhenGameObjectDestroyed(gameObject);
-        TypeEventSystem.Global.Register<InteractEnd>(e =>
-        {
             InteractHintManager.Instance.gameObject.SetActive(true);
         }).UnRegisterWhenGameObjectDestroyed(gameObject);
     }
