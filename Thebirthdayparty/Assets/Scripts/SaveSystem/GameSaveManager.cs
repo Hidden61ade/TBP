@@ -80,6 +80,7 @@ public class GameSaveManager : MonoBehaviour
             else
             {
                 currentSave = new GameSaveData();
+                SaveGame();
                 Debug.Log("New game save created");
             }
         }
