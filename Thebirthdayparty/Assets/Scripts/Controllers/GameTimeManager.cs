@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using QFramework;
-using TMPro;
 
 public class GameTimeManager : MonoSingleton<GameTimeManager>
 {
@@ -30,6 +29,7 @@ public class GameTimeManager : MonoSingleton<GameTimeManager>
             _ => GameTime.Invalid
         };
     }
+    [InspectorButton("下一时段")]
     public void GoToNextPeriod()
     {
         var temp = GetNext(out bool isNextDay);
@@ -38,6 +38,7 @@ public class GameTimeManager : MonoSingleton<GameTimeManager>
             GameSaveManager.Instance.AdvanceDay();
         }
         GameSaveManager.Instance.SetPeriod(GameManager.TimeName[temp]);
+        TypeEventSystem.Global.Send(new OnDayEventTriggered(GetCurrentEvent()));
     }
     public DayEvents GetDayEvents()
     {
@@ -49,20 +50,20 @@ public class GameTimeManager : MonoSingleton<GameTimeManager>
     }
     private void Start()
     {
-        StartCoroutine(Tester());
+        
     }
-    IEnumerator Tester()
-    {
-        int i = 0;
-        while (i < 10)
-        {
-            Debug.Log("Now, Day: " + GetCurrentDay()
-            + "\nPeriod: " + GameManager.TimeName[GetCurrentPeriod()]
-            + "\nEvent: " + GetCurrentEvent().eventName
-            );
-            GoToNextPeriod();
-            i++;
-            yield return new WaitForSeconds(1);
-        }
-    }
+    // IEnumerator Tester()
+    // {
+    //     int i = 0;
+    //     while (i < 10)
+    //     {
+    //         Debug.Log("Now, Day: " + GetCurrentDay()
+    //         + "\nPeriod: " + GameManager.TimeName[GetCurrentPeriod()]
+    //         + "\nEvent: " + GetCurrentEvent().eventName
+    //         );
+    //         GoToNextPeriod();
+    //         i++;
+    //         yield return new WaitForSeconds(1);
+    //     }
+    // }
 }

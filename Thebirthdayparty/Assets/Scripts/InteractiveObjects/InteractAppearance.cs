@@ -9,7 +9,7 @@ namespace Interactable
     {
         Transform player;
         public float image_range;
-        public string iconName;
+        [HideInInspector] public string iconName;
         public bool IsHighlighted
         {
             get
@@ -39,6 +39,11 @@ namespace Interactable
         {
             player = InteractHintManager.Instance.Player.transform;
             range = InteractHintManager.Instance.Range;
+        }
+        private void OnDisable() {
+            if(!m_icon.IsUnityNull()){
+                Destroy(m_icon);
+            }
         }
         void Update()
         {

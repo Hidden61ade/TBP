@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: T0
   m_EditorClassIdentifier: 
   id: T0
-  obj_name: TestBook
+  obj_name: TripleCactus
   type: 3
   prefab: {fileID: 8548029597574409284, guid: 67ac93832e0411d4a9c1de7a1486c47a, type: 3}
