@@ -18,19 +18,13 @@ public class GameManager : MonoBehaviour
         Paused,
         Ending
     }
-    public enum GameTime
-    {
-        Morning,
-        Afternoon,
-        Evening,
-        Invalid
-    }
     public static Dictionary<GameTime, string> TimeName = new(){
         {GameTime.Morning,"morning"},
         {GameTime.Afternoon,"afternoon"},
         {GameTime.Evening,"evening"}
         };
-    public static GameTime TimeFromString(string arg){
+    public static GameTime TimeFromString(string arg)
+    {
         return arg switch
         {
             "morning" => GameTime.Morning,
@@ -88,4 +82,11 @@ public class GameManager : MonoBehaviour
         // 这里可以根据具体需求扩展
         return false;
     }
+}
+public enum GameTime
+{
+    Morning,
+    Afternoon,
+    Evening,
+    Invalid
 }
