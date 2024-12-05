@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class OnSceneLoadedEvent
 {
-
+    public readonly string name = "[NOTMENTIONED]";
+    public OnSceneLoadedEvent(){}
+    public OnSceneLoadedEvent(string name){
+        this.name = name;
+    }
 }
 public class OnDayEventTriggered
 {

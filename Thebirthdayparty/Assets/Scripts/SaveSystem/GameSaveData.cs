@@ -4,6 +4,7 @@ using System.Collections.Generic;
 [Serializable]
 public class GameSaveData
 {
+    public bool firstPlayed;
     public int currentCycle;
     public int currentDay;
     public string currentPeriod;
@@ -14,6 +15,7 @@ public class GameSaveData
 
     public GameSaveData()
     {
+        firstPlayed = true;
         currentCycle = 1;
         currentDay = 1;
         currentPeriod = "morning";

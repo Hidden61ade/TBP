@@ -13,10 +13,10 @@ public class PlayerController : MonoSingleton<PlayerController>
     private Transform Camera;
     private bool cursorLocked = false;
     #region Monobehaviour Callbacks
-    private void OnEnable()
-    {
-        interactable = true;
-    }
+    // private void OnEnable()
+    // {
+    //     interactable = true;
+    // }
     private void Start()
     {
         rb = GetComponent<Rigidbody>();

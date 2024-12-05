@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 0.3
+  m_AmbientIntensity: 0.6
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
@@ -3011,6 +3011,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 528664452}
+    - targetCorrespondingSourceObject: {fileID: 4201270124968919453, guid: a8544713cc514154098de947da0bb241,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 528664454}
   m_SourcePrefab: {fileID: 100100000, guid: a8544713cc514154098de947da0bb241, type: 3}
 --- !u!4 &528664448 stripped
 Transform:
@@ -3025,7 +3029,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 95158036}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 259db52bf7a227043bc1f1aeb36e4742, type: 3}
   m_Name: 
@@ -3039,13 +3043,83 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 95158036}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2566d7a25667f8045afec468b09eccd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isOnThis: 0
   DataName: T0
+--- !u!114 &528664454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95158036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f5bd4dc05363e74cbd5a2b3f7d546ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventName: free_time
+  OnTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 528664453}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 528664452}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  OnRepeated:
+    m_PersistentCalls:
+      m_Calls: []
+  OnOtherTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 528664453}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 528664452}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &577397249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10613,7 +10687,7 @@ PrefabInstance:
     - target: {fileID: 893615578082603692, guid: 1b7fc412d9faab140842e8595b569fc4,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2355311668965718002, guid: 1b7fc412d9faab140842e8595b569fc4,
         type: 3}
@@ -10625,35 +10699,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2982543300559581802, guid: 1b7fc412d9faab140842e8595b569fc4,
+        type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3771491824329135381, guid: 1b7fc412d9faab140842e8595b569fc4,
         type: 3}
       propertyPath: m_Constraints
       value: 116
       objectReference: {fileID: 0}
-    - target: {fileID: 4500474760140775745, guid: 1b7fc412d9faab140842e8595b569fc4,
+    - target: {fileID: 6606167973239410214, guid: 1b7fc412d9faab140842e8595b569fc4,
         type: 3}
-      propertyPath: m_Depth
+      propertyPath: m_Enabled
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4500474760140775745, guid: 1b7fc412d9faab140842e8595b569fc4,
-        type: 3}
-      propertyPath: m_BackGroundColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4500474760140775745, guid: 1b7fc412d9faab140842e8595b569fc4,
-        type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4500474760140775745, guid: 1b7fc412d9faab140842e8595b569fc4,
-        type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4500474760140775745, guid: 1b7fc412d9faab140842e8595b569fc4,
-        type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6779123931706737851, guid: 1b7fc412d9faab140842e8595b569fc4,
         type: 3}
@@ -10668,17 +10727,17 @@ PrefabInstance:
     - target: {fileID: 7385622523404775178, guid: 1b7fc412d9faab140842e8595b569fc4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.89
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 7385622523404775178, guid: 1b7fc412d9faab140842e8595b569fc4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.43
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 7385622523404775178, guid: 1b7fc412d9faab140842e8595b569fc4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.2396874
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7385622523404775178, guid: 1b7fc412d9faab140842e8595b569fc4,
         type: 3}

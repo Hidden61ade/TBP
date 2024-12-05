@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using QFramework;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -46,6 +48,29 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        if (GameSaveManager.Instance.currentSave.firstPlayed)
+        {
+            TypeEventSystem.Global.Register<OnSceneLoadedEvent>(e =>
+            {
+                if (e.name == "SampleScene")
+                {
+                    Debug.Log("播放初始动画");
+                    var temp = GameObject.FindWithTag("Player");
+                    temp.transform.position = new Vector3(22, 2.8f, 1.5f);
+                    temp.transform.eulerAngles = new Vector3(-85, -90, 0);
+                    temp.AddComponent<StartAnimation>();
+                    Unreg.Invoke();
+                }
+            });
+        }
+    }
+    private static IUnRegister startAnimationRegHandle;
+    Action Unreg = () =>
+    {
+        startAnimationRegHandle?.UnRegister();
+    };
     public void RecordPlayerAction(string actionName)
     {
         playerActions[actionName] = true;

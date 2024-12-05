@@ -57,7 +57,6 @@ public class SceneController : MonoSingleton<SceneController>
             StopCoroutine(currentCoroutine);
         }
         StartCoroutine(IEAsyncSwitchSceneTo(name));
-        TypeEventSystem.Global.Send<OnSceneLoadedEvent>();
     }
     public void SwitchSceneWithRelease(string name)
     {
@@ -78,7 +77,7 @@ public class SceneController : MonoSingleton<SceneController>
             yield return null;
         }
 
-        TypeEventSystem.Global.Send<OnSceneLoadedEvent>();
+        TypeEventSystem.Global.Send(new OnSceneLoadedEvent(name));
         currentCoroutine = null;
     }
     private IEnumerator IELoadSceneAdditive(string name, bool autoSwitch)
@@ -95,7 +94,7 @@ public class SceneController : MonoSingleton<SceneController>
             SceneManager.SetActiveScene(SceneManager.GetSceneByName(name));
         }
 
-        TypeEventSystem.Global.Send<OnSceneLoadedEvent>();
+        TypeEventSystem.Global.Send(new OnSceneLoadedEvent(name));
         currentCoroutine = null;
     }
     private IEnumerator IEAsyncSwitchSceneTo(string name)
@@ -123,7 +122,7 @@ public class SceneController : MonoSingleton<SceneController>
         }
 
         // 发送场景切换完成事件
-        TypeEventSystem.Global.Send<OnSceneLoadedEvent>();
+        TypeEventSystem.Global.Send(new OnSceneLoadedEvent(name));
 
         currentCoroutine = null;
     }
@@ -166,7 +165,7 @@ public class SceneController : MonoSingleton<SceneController>
         loadOperation.allowSceneActivation = true;
         yield return null;
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(name));
-        TypeEventSystem.Global.Send<OnSceneLoadedEvent>();
+        TypeEventSystem.Global.Send(new OnSceneLoadedEvent(name));
         currentCoroutine = null;
     }
     private IEnumerator IEAsyncSwitchSceneWithRelease(string name)
@@ -185,7 +184,7 @@ public class SceneController : MonoSingleton<SceneController>
             yield return null;
         }
 
-        TypeEventSystem.Global.Send<OnSceneLoadedEvent>();
+        TypeEventSystem.Global.Send(new OnSceneLoadedEvent(name));
         currentCoroutine = null;
     }
 }
