@@ -15,7 +15,7 @@ public class StartAnimation : MonoBehaviour
         
         collider = GetComponent<Collider>();
         animation = gameObject.AddComponent<Animation>();
-        clip = Resources.Load("StartAnimation") as AnimationClip;
+        clip = Resources.Load("StartAnim/StartAnimation") as AnimationClip;
         animation.clip = clip;
         animation.AddClip(clip,clip.name);
 
