@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86cb2df0fd95c9e4c99acc1ebb2416e0, type: 3}
+  m_Name: Adam's Biography
+  m_EditorClassIdentifier: 
+  itemID: A01
+  itemName: Adam's Biography
+  itemIcon: {fileID: 21300000, guid: bcf0d4e599365974f9c5b39f75340e07, type: 3}
+  itemFullImage: {fileID: 21300000, guid: 9d399b2c0b8646144916454b896b08b7, type: 3}
+  descriptionL1: 'A navy blue biography titled ''Pioneer of Digital Age: The Story
+    of Adam Chen'
+  descriptionL2: 'The biography meticulously documents Adam''s entrepreneurial journey.
+    From his programming experiments in college to the challenges of founding his
+    first company, and ultimately the conception and realization of Metaplace. Most
+    notably, it details his unique understanding of the metaverse: not merely an
+    extension of virtual reality, but a new carrier of human consciousness. Matt
+    has made numerous notes in the margins, seemingly skeptical of certain viewpoints.'
+  isUnlocked: 1
+  unlockCondition: 
