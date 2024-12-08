@@ -1,4 +1,5 @@
 using QFramework;
+using UnityEngine;
 
 public class GameTimeManager : MonoSingleton<GameTimeManager>
 {
@@ -36,6 +37,10 @@ public class GameTimeManager : MonoSingleton<GameTimeManager>
         }
         GameSaveManager.Instance.SetPeriod(GameManager.TimeName[temp]);
         TypeEventSystem.Global.Send(new OnDayEventTriggered(GetCurrentEvent()));
+        Debug.Log("Now, Day: " + GetCurrentDay()
+            + "\nPeriod: " + GameManager.TimeName[GetCurrentPeriod()]
+            + "\nEvent: " + GetCurrentEvent().eventName
+            );
     }
     public DayEvents GetDayEvents()
     {
@@ -47,20 +52,6 @@ public class GameTimeManager : MonoSingleton<GameTimeManager>
     }
     private void Start()
     {
-        
+        DontDestroyOnLoad(gameObject);
     }
-    // IEnumerator Tester()
-    // {
-    //     int i = 0;
-    //     while (i < 10)
-    //     {
-    //         Debug.Log("Now, Day: " + GetCurrentDay()
-    //         + "\nPeriod: " + GameManager.TimeName[GetCurrentPeriod()]
-    //         + "\nEvent: " + GetCurrentEvent().eventName
-    //         );
-    //         GoToNextPeriod();
-    //         i++;
-    //         yield return new WaitForSeconds(1);
-    //     }
-    // }
 }

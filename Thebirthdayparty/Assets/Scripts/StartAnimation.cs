@@ -30,7 +30,7 @@ public class StartAnimation : MonoBehaviour
     }
     IEnumerator PlayStartAnimation(){
         yield return null;
-        NarrationData narrationData = Resources.Load("Narration/S0") as NarrationData;
+        NarrationData narrationData = Resources.Load("Narration/Event1") as NarrationData;
         NarrationManager.Instance.TriggerNarration(narrationData.narrationEvents);
         yield return null;
         animation.Play();

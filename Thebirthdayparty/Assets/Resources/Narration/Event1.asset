@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41ab92d1a2ee4d549987c776e94ce2f7, type: 3}
-  m_Name: S0
+  m_Name: Event1
   m_EditorClassIdentifier: 
   narrationEvents:
-  - eventID: 0
-    subtitleText: "Narrator: \"A new day begins. Before getting to business, maybe
-      browse through the new magazines on the shelf, or listen to some music to relax?\"\r"
-    audioClip: {fileID: 8300000, guid: dbcfbe945614f9e418de3db36b4ee218, type: 3}
+  - eventID: E1.0
+    subtitleText: Good morning, Matt. Another quiet morning... Oh? Seems like there's
+      a new notification on your computer. That's rare, considering you haven't received
+      any friend requests since that incident. Maybe you should check it out? It
+      might be more interesting than you think.
+    audioClip: {fileID: 8300000, guid: c551e00497754054285840850ed30cf8, type: 3}
     delayAfterNarration: 1
     conditions: []
     editorNotes: 

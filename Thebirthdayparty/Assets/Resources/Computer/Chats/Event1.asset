@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c5df3ec13761874594a1b172da83f25, type: 3}
+  m_Name: Event1
+  m_EditorClassIdentifier: 
+  EventId: 
+  msgDatas:
+  - hasChoice: 1
+    Content: '[Friend Request] Hey Matt, long time no see. I was thinking... maybe
+      we could throw a birthday party for George, just like old times. I know things
+      haven''t been great between us, but for George''s sake, would you give me a
+      chance to talk?'
+    Choices:
+    - '[Accept]'
+    - '[Refuse]'
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: '#SYS:ETD'
+    Choices: []
+    isSecondary: 1
+    mapping: 0
+  - hasChoice: 0
+    Content: 'Adam: Matt, thanks for accepting.'
+    Choices: []
+    isSecondary: 1
+    mapping: 1
+  - hasChoice: 0
+    Content: "#SYS:SCE1\r"
+    Choices: []
+    isSecondary: 1
+    mapping: 2
+  - hasChoice: 1
+    Content: "#SYS:PASS\r"
+    Choices:
+    - So, what do you want to say?
+    - Why suddenly want to throw a party?
+    - ......
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: 'Adam: George''s birthday is coming up, and I thought maybe we could
+      surprise him.'
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 1
+    Content: 'Adam: You know, like we used to do.'
+    Choices:
+    - Why contact me now?
+    - Are you sure George would want this party?
+    - Go on.
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: 'Adam: I know what happened last time made you angry...'
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: 'Adam: But lately I''ve been thinking, maybe we were both too stubborn.'
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 1
+    Content: 'Adam: George hasn''t been doing well recently, and I thought this might
+      be a chance to fix things.'
+    Choices:
+    - You're right, maybe it's time to let go of the past.
+    - So what do you need me to do?
+    - I'll think about it.
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: 'Adam: Great. I''ll send you the detailed plans.'
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: 'Adam: We''ll need to discuss the venue and theme in the next few days.'
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: 'Adam: Thanks for being part of this, Matt.
+
+'
+    Choices: []
+    isSecondary: 0
+    mapping: 0
