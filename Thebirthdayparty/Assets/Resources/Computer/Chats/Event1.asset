@@ -14,6 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EventId: 
   msgDatas:
+  - hasChoice: 0
+    Content: '#SYS:PASS'
+    Choices: []
+    isSecondary: 0
+    mapping: 0
   - hasChoice: 1
     Content: '[Friend Request] Hey Matt, long time no see. I was thinking... maybe
       we could throw a birthday party for George, just like old times. I know things

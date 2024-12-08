@@ -2,18 +2,51 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using QFramework;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChatController : MonoSingleton<ChatController>
 {
+    public Button Choice1;
+    public Button Choice2;
+    public Button Choice3;
     private void Start()
     {
         TypeEventSystem.Global.Register<OnChose>(e =>
         {
             choice = e.index;
         });
+        TypeEventSystem.Global.Register<OnChoiceActivated>(e =>
+        {
+            Choice1.GetComponentInChildren<TextMeshProUGUI>().SetText(e.choices[0]);
+            Choice2.GetComponentInChildren<TextMeshProUGUI>().SetText(e.choices[1]);
+            Choice3.GetComponentInChildren<TextMeshProUGUI>().SetText(e.choices[2]);
+        });
+        Choice1.onClick.AddListener(() =>
+        {
+            TypeEventSystem.Global.Send<OnChose>(new(1));
+            ClearChooseText();
+        });
+        Choice2.onClick.AddListener(() =>
+        {
+            TypeEventSystem.Global.Send<OnChose>(new(2));
+            ClearChooseText();
+        });
+        Choice3.onClick.AddListener(() =>
+        {
+            TypeEventSystem.Global.Send<OnChose>(new(3));
+            ClearChooseText();
+        });
     }
-    private void OnEnable() {
+    void ClearChooseText()
+    {
+        Choice1.GetComponentInChildren<TextMeshProUGUI>().SetText("");
+        Choice2.GetComponentInChildren<TextMeshProUGUI>().SetText("");
+        Choice3.GetComponentInChildren<TextMeshProUGUI>().SetText("");
+    }
+    private void OnEnable()
+    {
         //Test only
         TriggerChat("Event1");
     }
@@ -33,7 +66,7 @@ public class ChatController : MonoSingleton<ChatController>
     }
     public MessageSend messageSender;
     [SerializeField] private int choice = -1;
-    
+
     public void TriggerChat(string EventId)
     {
         var data = Resources.Load("Computer/Chats/" + EventId) as MessagesData;
@@ -115,11 +148,11 @@ public class ChatController : MonoSingleton<ChatController>
             {
                 break;
             }
-            Debug.Log("Try Send"+currentNode.content);
+            Debug.Log("Try Send" + currentNode.content);
             messageSender.Send(currentNode.content);
             if (currentNode.hasChoice)
             {
-                TypeEventSystem.Global.Send<OnChoiceActivated>(new (currentNode.choices));
+                TypeEventSystem.Global.Send<OnChoiceActivated>(new(currentNode.choices));
                 this.choice = -1;
                 yield return new WaitUntil(() => { return choice != -1; });
                 currentNode = currentNode.linkToBranches[choice] ?? currentNode.linkToBranches[0];
@@ -138,10 +171,18 @@ public class ChatController : MonoSingleton<ChatController>
 }
 public class OnChoiceActivated
 {
-    public string[] choices;
+    public string[] choices = new string[3];
     public OnChoiceActivated(string[] choices)
     {
-        this.choices = choices;
+        int temp = choices.Length;
+        for (int i = 0; i < temp; i++)
+        {
+            this.choices[i] = choices[i];
+        }
+        for (int i = temp; i < 3; i++)
+        {
+            this.choices[i] = "";
+        }
     }
 }
 public class OnChose

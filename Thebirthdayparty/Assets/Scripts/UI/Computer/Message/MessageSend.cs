@@ -22,6 +22,17 @@ public class MessageSend : MonoBehaviour
     }
     public void Send(string str)
     {
+        //Proceed Control
+        if(str.ToCharArray()[0]=='#'){
+            switch(str){
+                case "#SYS:PASS":
+                    break;
+                case "#SYS:ETD":
+                    Debug.LogError("Error Text Defult");
+                    break;
+            }
+            return;
+        }
         var temp = Instantiate(MsgPrefab, contentParent);
         temp.GetComponent<ComputerMsg.Message>().SetText(str);
     }

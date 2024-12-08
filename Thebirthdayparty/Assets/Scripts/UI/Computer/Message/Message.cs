@@ -22,14 +22,10 @@ namespace ComputerMsg
             // 获取父物体的 RectTransform 并修改高度
             RectTransform rt = GetComponent<RectTransform>();
             Vector2 size = rt.sizeDelta;
-            size.y = childWorldSize.y;
+            size.y = childWorldSize.y + 15;
             rt.sizeDelta = size;
-            // gameObject.SetActive(false);
-            // Invoke(nameof(Reactivate),0.01f);
             LayoutRebuilder.ForceRebuildLayoutImmediate(rt.parent.GetComponent<RectTransform>());
-        }
-        void Reactivate(){
-            gameObject.SetActive(true);
+            transform.parent.parent.parent.Find("Scrollbar").GetComponent<Scrollbar>().value = 0;
         }
     }
 }

@@ -9,12 +9,21 @@ public class ComputerWindow : MonoBehaviour
     Vector2 direction;
     public Button button;
     private bool isDragging = false; // 是否开始拖动
+    private bool AllowDragging = true;
     private Vector3 initialPosition; // 初始位置
     private RectTransform buttonRectTransform; // 按钮的RectTransform
 
+    public void SetActive(bool arg)
+    {
+        var temp = GetComponent<CanvasGroup>();
+        temp.alpha = arg ? 1 : 0;
+        temp.interactable = arg;
+        temp.blocksRaycasts = arg;
+        AllowDragging = arg;
+    }
     public void Quit(){
         ComputerUI.Instance.RemoveWindow(gameObject);
-        gameObject.SetActive(false);
+        SetActive(false);
     }
     private void Start()
     {
@@ -36,7 +45,7 @@ public class ComputerWindow : MonoBehaviour
         }
 
         // 拖动逻辑
-        if (isDragging)
+        if (isDragging && AllowDragging)
         {
             direction = (Vector2)(Input.mousePosition - lastMousePos);
             transform.position = initialPosition + (Vector3)direction;

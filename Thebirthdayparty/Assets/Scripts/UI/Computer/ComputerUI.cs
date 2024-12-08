@@ -40,8 +40,8 @@ public class ComputerUI : MonoSingleton<ComputerUI>
             //TODO: 
         });
 
-        m_files.SetActive(false);
-        m_chat.SetActive(false);
+        m_files.GetComponent<ComputerWindow>().SetActive(false);
+        m_chat.GetComponent<ComputerWindow>().SetActive(false);
         m_canvasGroup = GetComponent<CanvasGroup>();
         m_canvasGroup.alpha = 0;
         StartCoroutine(IEInitialize());
@@ -77,7 +77,7 @@ public class ComputerUI : MonoSingleton<ComputerUI>
         Cursor.SetCursor(cursor_3, Vector2.zero, CursorMode.ForceSoftware);
         yield return new WaitForSeconds(0.25f);
         Cursor.SetCursor(arrow, new Vector2(10, 10), CursorMode.ForceSoftware);
-        m_files.SetActive(true);
+        m_files.GetComponent<ComputerWindow>().SetActive(true);
         AddWindow(m_files);
         yield return null;
     }
@@ -86,7 +86,7 @@ public class ComputerUI : MonoSingleton<ComputerUI>
         Cursor.SetCursor(cursor_3, Vector2.zero, CursorMode.ForceSoftware);
         yield return new WaitForSeconds(0.25f);
         Cursor.SetCursor(arrow, new Vector2(10, 10), CursorMode.ForceSoftware);
-        m_chat.SetActive(true);
+        m_chat.GetComponent<ComputerWindow>().SetActive(true);
         AddWindow(m_chat);
         yield return null;
     }
