@@ -8,35 +8,36 @@ using UnityEngine.UI;
 
 public class ChatController : MonoSingleton<ChatController>
 {
+    #region 按钮与选择控制
     public Button Choice1;
     public Button Choice2;
     public Button Choice3;
-    private void Start()
+    public string Choice1Ctrl = "";
+    public string Choice2Ctrl = "";
+    public string Choice3Ctrl = "";
+
+    void RegisterButtons()
     {
-        TypeEventSystem.Global.Register<OnChose>(e =>
-        {
-            choice = e.index;
-        });
-        TypeEventSystem.Global.Register<OnChoiceActivated>(e =>
-        {
-            Choice1.GetComponentInChildren<TextMeshProUGUI>().SetText(e.choices[0]);
-            Choice2.GetComponentInChildren<TextMeshProUGUI>().SetText(e.choices[1]);
-            Choice3.GetComponentInChildren<TextMeshProUGUI>().SetText(e.choices[2]);
-        });
         Choice1.onClick.AddListener(() =>
         {
             TypeEventSystem.Global.Send<OnChose>(new(1));
             ClearChooseText();
+            SetAbleChoices(false);
+            if(Choice1Ctrl!="") messageSender.Send(Choice1Ctrl);
         });
         Choice2.onClick.AddListener(() =>
         {
             TypeEventSystem.Global.Send<OnChose>(new(2));
             ClearChooseText();
+            SetAbleChoices(false);
+            if(Choice2Ctrl!="") messageSender.Send(Choice2Ctrl);
         });
         Choice3.onClick.AddListener(() =>
         {
             TypeEventSystem.Global.Send<OnChose>(new(3));
             ClearChooseText();
+            SetAbleChoices(false);
+            if(Choice3Ctrl!="") messageSender.Send(Choice3Ctrl);
         });
     }
     void ClearChooseText()
@@ -45,10 +46,37 @@ public class ChatController : MonoSingleton<ChatController>
         Choice2.GetComponentInChildren<TextMeshProUGUI>().SetText("");
         Choice3.GetComponentInChildren<TextMeshProUGUI>().SetText("");
     }
-    private void OnEnable()
+    void SetAbleChoices(bool arg)
     {
-        //Test only
-        TriggerChat("Event1");
+        Choice1.interactable = arg;
+        Choice2.interactable = arg;
+        Choice3.interactable = arg;
+    }
+    void SetButtonTexts(string[] choices)
+    {   var A = ParseString.ParseChoice(choices[0]);
+        var B = ParseString.ParseChoice(choices[1]);
+        var C = ParseString.ParseChoice(choices[2]);
+        Choice1Ctrl = A[1];
+        Choice2Ctrl = B[1];
+        Choice3Ctrl = C[1];
+        Choice1.GetComponentInChildren<TextMeshProUGUI>().SetText(A[0]);
+        Choice2.GetComponentInChildren<TextMeshProUGUI>().SetText(B[0]);
+        Choice3.GetComponentInChildren<TextMeshProUGUI>().SetText(C[0]);
+    }
+    #endregion
+    private void Start()
+    {
+        TypeEventSystem.Global.Register<OnChose>(e =>
+        {
+            choice = e.index;
+        });
+        TypeEventSystem.Global.Register<OnChoiceActivated>(e =>
+        {
+            if (choice != -1) return;
+            SetAbleChoices(true);
+            SetButtonTexts(e.choices);
+        });
+        RegisterButtons();
     }
 
     class MsgNode
@@ -143,17 +171,17 @@ public class ChatController : MonoSingleton<ChatController>
         MsgNode currentNode = head;
         while (true)
         {
-            yield return new WaitForSeconds(1);
+            float interval;
             if (currentNode is null)
             {
                 break;
             }
-            Debug.Log("Try Send" + currentNode.content);
-            messageSender.Send(currentNode.content);
+            this.choice = -1;
+            ClearChooseText();
+            interval = messageSender.Send(ParseString.Parse(currentNode.content));
             if (currentNode.hasChoice)
             {
                 TypeEventSystem.Global.Send<OnChoiceActivated>(new(currentNode.choices));
-                this.choice = -1;
                 yield return new WaitUntil(() => { return choice != -1; });
                 currentNode = currentNode.linkToBranches[choice] ?? currentNode.linkToBranches[0];
                 continue;
@@ -166,6 +194,7 @@ public class ChatController : MonoSingleton<ChatController>
                 }
                 currentNode = currentNode.linkToBranches[0];
             }
+            yield return new WaitForSeconds(interval);
         }
     }
 }

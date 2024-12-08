@@ -9,10 +9,6 @@ public class MessageSend : MonoBehaviour
 {
     public Transform contentParent;
     public GameObject MsgPrefab;
-    private void Start()
-    {
-
-    }
     public string contToSend;
     [InspectorButton("Send")]
     void Send()
@@ -20,20 +16,47 @@ public class MessageSend : MonoBehaviour
         var temp = Instantiate(MsgPrefab, contentParent);
         temp.GetComponent<ComputerMsg.Message>().SetText(contToSend);
     }
-    public void Send(string str)
+    public float Send(string str)
     {
+        Debug.Log("Sender Get: " + str);
         //Proceed Control
-        if(str.ToCharArray()[0]=='#'){
-            switch(str){
+        if (str.ToCharArray()[0] == '#')
+        {
+            switch (str)
+            {
                 case "#SYS:PASS":
+                    break;
+                case "#SYS:FP":
+                    TypeEventSystem.Global.Send<OnChose>(new(0));
                     break;
                 case "#SYS:ETD":
                     Debug.LogError("Error Text Defult");
                     break;
+                case "#SYS:SCE1":
+                    //Todo 触发特殊事件
+                    break;
+                default:
+                    string command = str.Substring(1, 2); // 获取#后面两位字符
+                    string argument = str.Substring(str.IndexOf('(') + 1, str.IndexOf(')') - str.IndexOf('(') - 1);
+                    // 调用相应的函数
+                    switch (command)
+                    {
+                        case "ST":
+                            ParseString.SetVariableTrue(argument);
+                            break;
+                        case "SF":
+                            ParseString.SetVariableFalse(argument);
+                            break;
+                        default:
+                            Debug.LogWarning("Unknown command");
+                            break;
+                    }
+                    break;
             }
-            return;
+            return 0.1f;
         }
         var temp = Instantiate(MsgPrefab, contentParent);
         temp.GetComponent<ComputerMsg.Message>().SetText(str);
+        return 1;
     }
 }

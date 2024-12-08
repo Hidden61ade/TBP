@@ -18,7 +18,6 @@ namespace ComputerMsg
             GetComponentInChildren<TextMeshProUGUI>().SetText(str);
             yield return new WaitForSeconds(0.01f);
             Vector2 childWorldSize = childRect.rect.size;
-            Debug.Log(childRect.rect.size);
             // 获取父物体的 RectTransform 并修改高度
             RectTransform rt = GetComponent<RectTransform>();
             Vector2 size = rt.sizeDelta;
