@@ -11,7 +11,7 @@ public static class ParseString
     {
         get
         {
-            return false;
+            return true;
         }
     }
     public static void SetVariableTrue(string variableName)
@@ -36,6 +36,18 @@ public static class ParseString
             variables.Add(variableName, false);
         }
     }
+        // 设置或更新变量值
+    public static void SetVariable(string variableName, bool value)
+    {
+        variables[variableName] = value;
+    }
+
+    // 获取变量值，若变量名不存在，则默认返回 false
+    public static bool GetVariable(string variableName)
+    {
+        return variables.ContainsKey(variableName) && variables[variableName];
+    }
+
     // 解析字符串的方法
     public static string Parse(string input)
     {
@@ -51,7 +63,7 @@ public static class ParseString
 
         if (startIndex > 1 && endIndex > startIndex)
         {
-            string variableName = input.Substring(startIndex, endIndex - startIndex);
+            string variablesList = input.Substring(startIndex, endIndex - startIndex); // 提取变量列表
             int dollarEndIndex = input.IndexOf('$', endIndex + 1); // 找到 $ 结束符
 
             if (dollarEndIndex > endIndex)
@@ -59,15 +71,20 @@ public static class ParseString
                 string trueContent = input.Substring(endIndex + 1, dollarEndIndex - endIndex - 1).Split(';')[0];  // 提取 A 部分
                 string falseContent = input.Substring(endIndex + 1, dollarEndIndex - endIndex - 1).Split(';')[1]; // 提取 B 部分
 
-                // 检查变量值，返回相应内容
-                if (variables.ContainsKey(variableName))
+                // 检查所有变量是否都为 true
+                string[] variableNames = variablesList.Split(',');
+
+                bool allTrue = true;
+                foreach (var variableName in variableNames)
                 {
-                    return variables[variableName] ? trueContent : falseContent;
+                    if (!GetVariable(variableName.Trim())) // 检查是否所有变量都为 true
+                    {
+                        allTrue = false;
+                        break;
+                    }
                 }
-                else
-                {
-                    return falseContent;
-                }
+
+                return allTrue ? trueContent : falseContent;
             }
         }
 

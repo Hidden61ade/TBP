@@ -51,7 +51,7 @@ MonoBehaviour:
     isSecondary: 1
     mapping: 3
   - hasChoice: 1
-    Content: $(R)That R?;#SYS:FP$
+    Content: $(R,TestVariable,S)That R?;#SYS:FP$
     Choices:
     - R1
     - R2
