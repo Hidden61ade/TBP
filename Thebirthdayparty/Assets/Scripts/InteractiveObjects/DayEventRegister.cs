@@ -6,17 +6,17 @@ using UnityEngine.Events;
 #nullable enable
 public class DayEventRegister : MonoBehaviour
 {
-    public string EventName;
-    public UnityEvent OnTriggered;
+    public string EventName = "[DEFAULT NAME]";
+    public UnityEvent? OnTriggered;
     public UnityEvent? OnRepeated;
-    public UnityEvent OnOtherTriggered;
+    public UnityEvent? OnOtherTriggered;
     private void Start()
     {
         TypeEventSystem.Global.Register<OnDayEventTriggered>(e =>
         {
             if (!(EventName == e.Event.eventName))
             {
-                OnOtherTriggered.Invoke();
+                OnOtherTriggered?.Invoke();
                 return;
             }
             if (e.Event.completed)
@@ -24,7 +24,7 @@ public class DayEventRegister : MonoBehaviour
                 OnRepeated?.Invoke();
                 return;
             }
-            OnTriggered.Invoke();
+            OnTriggered?.Invoke();
         }).UnRegisterWhenGameObjectDestroyed(gameObject);
     }
 }
