@@ -13,78 +13,95 @@
 
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
+using System.Xml.Schema;
 
 public class CollectionManager : MonoBehaviour
 {
     public static CollectionManager Instance { get; private set; }
+    private readonly Dictionary<string, CollectionData> collectionDict = new();
+    [SerializeField] private List<string> LoadedIDs = new();
+    public Dictionary<CollectionData.CollectionType, string> CollectionTypeStringDict = new(){
+        {CollectionData.CollectionType.documents,"documents"},
+        {CollectionData.CollectionType.photos,"photos"},
+        {CollectionData.CollectionType.music,"music"},
+        {CollectionData.CollectionType.specialItems,"specialItems"}
+    };
 
-    [SerializeField] private CollectionData[] allCollections;
-    private Dictionary<string, CollectionData> collectionDict = new Dictionary<string, CollectionData>();
-    
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            InitializeCollections();
         }
         else
         {
             Destroy(gameObject);
         }
     }
-
-    private void InitializeCollections()
+    private void Start()
     {
-        foreach (var collection in allCollections)
-        {
-            if (!collectionDict.ContainsKey(collection.itemID))
-            {
-                collectionDict.Add(collection.itemID, collection);
-            }
-        }
-        LoadUnlockStatus();
+        Initialize();
+        UnlockCollection("A01");
     }
-
+    void Initialize()
+    {
+        var t_AllDataResource = GetAllCollectionDatas();
+        foreach (var item in t_AllDataResource)
+        {
+            collectionDict.Add(item.itemID, item);
+            LoadedIDs.Add(item.itemID);
+        }
+    }
     public void UnlockCollection(string itemID)
     {
-        if (collectionDict.TryGetValue(itemID, out CollectionData collection))
-        {
-            collection.isUnlocked = true;
-            SaveUnlockStatus();
-        }
+        var temp = collectionDict[itemID];
+        GameSaveManager.Instance.UnlockCollection(itemID, CollectionTypeStringDict[temp.collectionType]);
     }
 
     public bool IsCollectionUnlocked(string itemID)
     {
-        return collectionDict.TryGetValue(itemID, out CollectionData collection) && collection.isUnlocked;
+        return GetCollectionLockState(itemID) >= 1;
     }
+    public int GetCollectionLockState(string itemID)
+    {
+        var temp = collectionDict[itemID];
+        var ctrl = GameSaveManager.Instance.GetCollectionState(itemID, CollectionTypeStringDict[temp.collectionType]);
+        if (ctrl is null)
+        {
+            return 0;
+        }
+        else
+        {
+            return ctrl.lockedStates;
+        }
+    }
+    public void AddToCollection()
+    {
 
+    }
     public CollectionData GetCollectionData(string itemID)
     {
-        return collectionDict.TryGetValue(itemID, out CollectionData collection) ? collection : null;
+        if (!collectionDict.ContainsKey(itemID))
+        {
+            return Resources.Load("Collections/" + itemID) as CollectionData;
+        }
+        collectionDict.TryGetValue(itemID, out CollectionData result);
+        return result;
     }
 
     public CollectionData[] GetAllCollections()
     {
-        return allCollections;
+        return collectionDict.Values.ToArray();
+    }
+    public CollectionData[] GetAllCollectionDatas()
+    {
+        return Resources.LoadAll<CollectionData>("Collections");
     }
 
     private void SaveUnlockStatus()
     {
-        foreach (var collection in collectionDict.Values)
-        {
-            PlayerPrefs.SetInt($"Collection_{collection.itemID}", collection.isUnlocked ? 1 : 0);
-        }
-        PlayerPrefs.Save();
-    }
-
-    private void LoadUnlockStatus()
-    {
-        foreach (var collection in collectionDict.Values)
-        {
-            collection.isUnlocked = PlayerPrefs.GetInt($"Collection_{collection.itemID}", 0) == 1;
-        }
+        GameSaveManager.Instance.SaveGame();
     }
 }

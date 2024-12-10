@@ -28,4 +28,10 @@ public class GameSaveData
         dailyEvents = DailyEventsInitializer.InitializeDailyEvents();
         collections = new Collections();
     }
+    public void ResetObjectsInfo()
+    {
+        interactedItems = new();
+        collections = new();
+        firstPlayed = true;
+    }
 }

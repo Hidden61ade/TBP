@@ -20,6 +20,7 @@ public class MessageSend : MonoBehaviour
     {
         Debug.Log("Sender Get: " + str);
         //Proceed Control
+        #region Control Functions
         if (str.ToCharArray()[0] == '#')
         {
             switch (str)
@@ -55,6 +56,7 @@ public class MessageSend : MonoBehaviour
             }
             return 0.1f;
         }
+        #endregion
         var temp = Instantiate(MsgPrefab, contentParent);
         temp.GetComponent<ComputerMsg.Message>().SetText(str);
         return 1;

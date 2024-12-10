@@ -11,10 +11,10 @@
 //     {
 //         // 记录物品交互
 //         GameSaveManager.Instance.AddInteractedItem(itemId);
-        
+
 //         // 更新好感度
 //         GameSaveManager.Instance.UpdateAffinity("Adam", 1.0f);
-        
+
 //         // 添加到收藏
 //         GameSaveManager.Instance.AddToCollection(itemId, "documents");
 //     }
@@ -75,6 +75,12 @@ public class GameSaveManager : MonoBehaviour
             {
                 string jsonData = File.ReadAllText(saveFilePath);
                 currentSave = JsonConvert.DeserializeObject<GameSaveData>(jsonData);
+                if ((!currentSave.firstPlayed) && GameTimeManager.Instance.GetCurrentDay() == 1 && GameTimeManager.Instance.GetCurrentPeriod() == GameTime.Morning)
+                {
+                    currentSave.ResetObjectsInfo();
+                    Debug.Log("New cycle. Object infomation reset.");
+                    SaveGame();
+                }
                 Debug.Log("Game loaded successfully");
             }
             else
@@ -123,23 +129,81 @@ public class GameSaveManager : MonoBehaviour
         SaveGame();
     }
 
-    public void AddToCollection(string itemId, string collectionType)
+    public void AddToCollection(string itemId, string collectionType, int lockedMode = 1)
     {
         switch (collectionType)
         {
             case "documents":
-                currentSave.collections.documents.Add(itemId);
+                currentSave.collections.documents.Add(new CollectionState(itemId, lockedMode));
                 break;
             case "photos":
-                currentSave.collections.photos.Add(itemId);
+                currentSave.collections.photos.Add(new CollectionState(itemId, lockedMode));
                 break;
             case "music":
-                currentSave.collections.music.Add(itemId);
+                currentSave.collections.music.Add(new CollectionState(itemId, lockedMode));
                 break;
             case "specialItems":
-                currentSave.collections.specialItems.Add(itemId);
+                currentSave.collections.specialItems.Add(new CollectionState(itemId, lockedMode));
                 break;
         }
         SaveGame();
+    }
+    public CollectionState GetCollectionState(string itemId, string collectionType)
+    {
+        return collectionType switch
+        {
+            "documents" => currentSave.collections.documents.FirstOrDefault(doc => doc.ID == itemId),
+            "photos" => currentSave.collections.photos.FirstOrDefault(doc => doc.ID == itemId),
+            "music" => currentSave.collections.music.FirstOrDefault(doc => doc.ID == itemId),
+            "specialItems" => currentSave.collections.specialItems.FirstOrDefault(doc => doc.ID == itemId),
+            _ => null,
+        };
+    }
+    public void UnlockCollection(string itemId, string collectionType, int lockedMode = 1)
+    {
+        switch (collectionType)
+        {
+            case "documents":
+                if (currentSave.collections.documents.TryGetValue(GetCollectionState(itemId, collectionType), out CollectionState value))
+                {
+                    value.lockedStates = lockedMode;
+                }
+                else
+                {
+                    AddToCollection(itemId, collectionType);
+                }
+                break;
+            case "photos":
+                if (currentSave.collections.photos.TryGetValue(GetCollectionState(itemId, collectionType), out CollectionState value1))
+                {
+                    value1.lockedStates = lockedMode;
+                }
+                else
+                {
+                    AddToCollection(itemId, collectionType);
+                }
+                break;
+            case "music":
+                if (currentSave.collections.music.TryGetValue(GetCollectionState(itemId, collectionType), out CollectionState value2))
+                {
+                    value2.lockedStates = lockedMode;
+                }
+                else
+                {
+                    AddToCollection(itemId, collectionType);
+                }
+                break;
+            case "specialItems":
+                if (currentSave.collections.specialItems.TryGetValue(GetCollectionState(itemId, collectionType), out CollectionState value3))
+                {
+                    value3.lockedStates = lockedMode;
+                }
+                else
+                {
+                    AddToCollection(itemId, collectionType);
+                }
+                break;
+            default: break;
+        }
     }
 }

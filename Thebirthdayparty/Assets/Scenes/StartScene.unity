@@ -1585,52 +1585,6 @@ MonoBehaviour:
   descriptionL1: {fileID: 1191167347}
   descriptionL2: {fileID: 285780277}
   closeDetailButton: {fileID: 155522383}
---- !u!1 &1127048168
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1127048170}
-  - component: {fileID: 1127048169}
-  m_Layer: 0
-  m_Name: CollectionManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1127048169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1127048168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29692301058fc3e44b3afe9cde8993e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  allCollections:
-  - {fileID: 11400000, guid: 1e13c7154753244448c52bb7204a3433, type: 2}
---- !u!4 &1127048170
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1127048168}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 399.37668, y: 200.54646, z: 145.59964}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1184222344
 GameObject:
   m_ObjectHideFlags: 0
@@ -3012,4 +2966,3 @@ SceneRoots:
   - {fileID: 1983305046}
   - {fileID: 1612602837}
   - {fileID: 2056627888}
-  - {fileID: 1127048170}
