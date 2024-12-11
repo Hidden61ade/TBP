@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using QFramework;
@@ -7,6 +8,7 @@ using UnityEngine;
 
 public class MessageSend : MonoBehaviour
 {
+    public string currentCharacter = "Adam";
     public Transform contentParent;
     public GameObject MsgPrefab;
     public string contToSend;
@@ -37,28 +39,39 @@ public class MessageSend : MonoBehaviour
                     //Todo 触发特殊事件
                     break;
                 default:
-                    string command = str.Substring(1, 2); // 获取#后面两位字符
-                    string argument = str.Substring(str.IndexOf('(') + 1, str.IndexOf(')') - str.IndexOf('(') - 1);
-                    // 调用相应的函数
-                    switch (command)
+                    try
                     {
-                        case "ST":
-                            ParseString.SetVariableTrue(argument);
-                            break;
-                        case "SF":
-                            ParseString.SetVariableFalse(argument);
-                            break;
-                        default:
-                            Debug.LogWarning("Unknown command");
-                            break;
+                        string command = str.Substring(1, 2); // 获取#后面两位字符
+                        string argument = str.Substring(str.IndexOf('(') + 1, str.IndexOf(')') - str.IndexOf('(') - 1);
+                        // 调用相应的函数
+
+                        switch (command)
+                        {
+                            case "ST":
+                                ParseString.SetVariableTrue(argument);
+                                break;
+                            case "SF":
+                                ParseString.SetVariableFalse(argument);
+                                break;
+                            case "AF":
+                                GameSaveManager.Instance.UpdateAffinity(currentCharacter, int.Parse(argument));
+                                break;
+                            default:
+                                Debug.LogWarning("Unknown command");
+                                break;
+                        }
+                        break;
                     }
-                    break;
+                    catch (Exception)
+                    {
+                        break;
+                    }
             }
             return 0.1f;
         }
         #endregion
         var temp = Instantiate(MsgPrefab, contentParent);
         temp.GetComponent<ComputerMsg.Message>().SetText(str);
-        return 1;
+        return 1.5f;
     }
 }

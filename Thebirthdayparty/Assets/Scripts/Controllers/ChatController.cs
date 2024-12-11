@@ -69,13 +69,13 @@ public class ChatController : MonoSingleton<ChatController>
         TypeEventSystem.Global.Register<OnChose>(e =>
         {
             choice = e.index;
-        });
+        }).UnRegisterWhenGameObjectDestroyed(gameObject);
         TypeEventSystem.Global.Register<OnChoiceActivated>(e =>
         {
             if (choice != -1) return;
             SetAbleChoices(true);
             SetButtonTexts(e.choices);
-        });
+        }).UnRegisterWhenGameObjectDestroyed(gameObject);
         RegisterButtons();
     }
 

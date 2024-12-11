@@ -3598,6 +3598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 023e66bec48b2d944a64716a221a4e4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentCharacter: Adam
   contentParent: {fileID: 1461823416}
   MsgPrefab: {fileID: 3756068781408913952, guid: 77149e6bfbb28ae4fb356c7b7c2dea23,
     type: 3}

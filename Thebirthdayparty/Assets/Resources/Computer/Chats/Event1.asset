@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c5df3ec13761874594a1b172da83f25, type: 3}
   m_Name: Event1
   m_EditorClassIdentifier: 
-  EventId: 
+  EventId: 1
   msgDatas:
   - hasChoice: 0
     Content: '#SYS:PASS'
@@ -45,7 +45,7 @@ MonoBehaviour:
     isSecondary: 1
     mapping: 2
   - hasChoice: 1
-    Content: "#SYS:PASS\r"
+    Content: '#SYS:PASS'
     Choices:
     - So, what do you want to say?
     - Why suddenly want to throw a party?

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86cb2df0fd95c9e4c99acc1ebb2416e0, type: 3}
+  m_Name: G03
+  m_EditorClassIdentifier: 
+  collectionType: 0
+  itemID: G03
+  itemName: Management change report
+  itemIcon: {fileID: 0}
+  itemFullImage: {fileID: 0}
+  descriptionL1: 'A business media article titled ''Industry Shocked: Metaspace Co-founder
+    George''s Sudden Departure.'
+  descriptionL2: 'The article details George''s sudden departure and his disagreements
+    over the company''s direction. It quotes his resignation statement: ''Technological
+    development must prioritize human welfare.'' It also mentions his heated disputes
+    with the board over AI development issues before leaving. The report concludes
+    by noting he retained patents for certain key technologies.'
+  unlockCondition: 

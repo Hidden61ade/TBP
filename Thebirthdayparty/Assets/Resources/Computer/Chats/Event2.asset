@@ -1,0 +1,141 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c5df3ec13761874594a1b172da83f25, type: 3}
+  m_Name: Event2
+  m_EditorClassIdentifier: 
+  EventId: 2
+  msgDatas:
+  - hasChoice: 0
+    Content: 'Adam: Hey Matt, we need to think carefully about the party venue.'
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: 'Adam: This means a lot to George after all.'
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 1
+    Content: 'Adam: Any suggestions?'
+    Choices:
+    - $How about that restaurant we used to go to?#ST(R)
+    - $What about the Metaplace office?#ST(O)
+    - $We should pick somewhere quiet.#ST(Q)
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 1
+    Content: '$(R)Adam: You mean The Terminal?;#SYS:FP$'
+    Choices:
+    - $Yes, where our ideas first started.#ST(AFD)
+    - $Yeah, the atmosphere there is nice.#ST(AFS)
+    - $Any restaurant would do.#ST(AFN)
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: '#SYS:PASS'
+    Choices: []
+    isSecondary: 1
+    mapping: 0
+  - hasChoice: 0
+    Content: '$(Napkin)Adam: You''re right, we liked that place.;Adam: ...Do you
+      really know what you''re saying?$'
+    Choices: []
+    isSecondary: 1
+    mapping: 1
+  - hasChoice: 0
+    Content: '$(Napkin)Adam: You''re right, we liked that place.;Adam: Hum... Yeah,
+      nice atmosphere.$'
+    Choices: []
+    isSecondary: 1
+    mapping: 2
+  - hasChoice: 0
+    Content: 'Adam: Well whatever.'
+    Choices: []
+    isSecondary: 1
+    mapping: 3
+  - hasChoice: 1
+    Content: '$(O)Adam: The office... To be honest, George hardly goes there anymore.
+      Since he left the management...;#SYS:FP$'
+    Choices:
+    - $Sorry, I forgot about that.#ST(AFS)
+    - What exactly happened?
+    - $Let's pick somewhere else then.#ST(AFN)
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: '#SYS:PASS'
+    Choices: []
+    isSecondary: 1
+    mapping: 0
+  - hasChoice: 1
+    Content: '$(Q)Adam: Do you have something specific in mind?;#SYS:FP$'
+    Choices:
+    - $The lakeside cabin George visits lately?#ST(AFD)
+    - Maybe a coffee shop or something.
+    - $You decide.#ST(AFN)
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: '#SYS:PASS'
+    Choices: []
+    isSecondary: 1
+    mapping: 0
+  - hasChoice: 0
+    Content: 'Adam: Alright, noted.'
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: 'Adam: We''ll discuss the theme later.'
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: $(Napkin,AFD)#AF(1);#SYS:PASS$
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: $(AFD)#AF(1);#SYS:PASS$
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: $(AFS)#AF(1);#SYS:PASS$
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: $(AFN)#AF(-1);#SYS:PASS$
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: $(Departure,AFD)#AF(1);#SYS:PASS$
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: $(Cabin,AFD)#AF(1);#SYS:PASS$
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: $(Cabin,AFD)#AF(1);#SYS:PASS$
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: 'Adam: Thanks for your input, Matt.'
+    Choices: []
+    isSecondary: 0
+    mapping: 0

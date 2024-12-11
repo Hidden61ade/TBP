@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
     {
         if (GameSaveManager.Instance.currentSave.firstPlayed)
         {
-            TypeEventSystem.Global.Register<OnSceneLoadedEvent>(e =>
+            startAnimationRegHandle = TypeEventSystem.Global.Register<OnSceneLoadedEvent>(e =>
             {
                 if (e.name == "SampleScene")
                 {

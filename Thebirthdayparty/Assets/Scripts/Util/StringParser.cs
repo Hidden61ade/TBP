@@ -3,15 +3,31 @@ using System.Collections.Generic;
 
 public static class ParseString
 {
-    // 字典用于存储变量名和对应的布尔值
+    private static Dictionary<string, bool> tempVariables = new();
     private static Dictionary<string, bool> variables = new(){
-        {"TestVariable",TestVariable}
+        {"Napkin",Napkin},
+        {"Departure",Departure},
+        {"Cabin",Cabin}
     };
-    private static bool TestVariable
+    private static bool Napkin
     {
         get
         {
-            return true;
+            return CollectionManager.Instance.IsCollectionUnlocked("M00");
+        }
+    }
+    private static bool Departure
+    {
+        get
+        {
+            return CollectionManager.Instance.IsCollectionUnlocked("G03");
+        }
+    }
+    private static bool Cabin
+    {
+        get
+        {
+            return CollectionManager.Instance.IsCollectionUnlocked("G08");
         }
     }
     public static void SetVariableTrue(string variableName)
@@ -20,9 +36,13 @@ public static class ParseString
         {
             variables[variableName] = true;
         }
+        else if (tempVariables.ContainsKey(variableName))
+        {
+            tempVariables[variableName] = true;
+        }
         else
         {
-            variables.Add(variableName, true);
+            tempVariables.Add(variableName, true);
         }
     }
     public static void SetVariableFalse(string variableName)
@@ -36,16 +56,22 @@ public static class ParseString
             variables.Add(variableName, false);
         }
     }
-        // 设置或更新变量值
-    public static void SetVariable(string variableName, bool value)
-    {
-        variables[variableName] = value;
-    }
 
     // 获取变量值，若变量名不存在，则默认返回 false
     public static bool GetVariable(string variableName)
     {
-        return variables.ContainsKey(variableName) && variables[variableName];
+        if (variables.ContainsKey(variableName))
+        {
+            return variables[variableName];
+        }
+        else if (tempVariables.ContainsKey(variableName))
+        {
+            return tempVariables[variableName];
+        }
+        else
+        {
+            return false;
+        }
     }
 
     // 解析字符串的方法
