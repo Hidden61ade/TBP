@@ -7,6 +7,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 
 public class ComputerUI : MonoSingleton<ComputerUI>
 {
@@ -20,6 +21,16 @@ public class ComputerUI : MonoSingleton<ComputerUI>
     public Texture2D cursor_3;
     [Header("Post Processing")]
     public Volume volume;
+    [Header("Button")]
+    public GameObject quitButton;
+    private void Awake() {
+        TypeEventSystem.Global.Register<LockQuitButton>(e=>{
+            quitButton.SetActive(false);
+        }).UnRegisterWhenGameObjectDestroyed(gameObject);
+        TypeEventSystem.Global.Register<UnlockQuitButton>(e=>{
+            quitButton.SetActive(true);
+        }).UnRegisterWhenGameObjectDestroyed(gameObject);
+    }
     void Start()
     {
         Cursor.SetCursor(arrow, new Vector2(10, 10), CursorMode.ForceSoftware);
@@ -170,4 +181,10 @@ public class ComputerUI : MonoSingleton<ComputerUI>
         }
     }
     #endregion
+}
+class LockQuitButton{
+
+}
+class UnlockQuitButton{
+
 }

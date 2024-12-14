@@ -9,7 +9,7 @@ public class ExternalConsoleLauncher : MonoBehaviour
 
     void Start()
     {
-        LaunchExternalConsole();
+        // LaunchExternalConsole();
     }
 
     void OnDestroy()
@@ -17,7 +17,7 @@ public class ExternalConsoleLauncher : MonoBehaviour
         CloseExternalConsole();
     }
 
-    private void LaunchExternalConsole()
+    public void LaunchExternalConsole()
     {
         if (string.IsNullOrEmpty(exePath))
         {

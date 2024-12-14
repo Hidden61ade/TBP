@@ -3,6 +3,7 @@ using QFramework;
 using Unity.VisualScripting;
 namespace Interactable
 {
+    [RequireComponent(typeof(InteractAppearance))]
     public class InteractableObject : MonoBehaviour
     {
         public bool isOnThis;
@@ -22,6 +23,8 @@ namespace Interactable
         public void OnTriggered()
         {
             temp = Instantiate(interactiveData.prefab, transform);
+            GameSaveManager.Instance.AddInteractedItem(DataName);
+            CollectionManager.Instance.AddToCollection(DataName);
         }
 
         public string DataName;

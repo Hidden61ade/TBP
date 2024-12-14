@@ -3,6 +3,12 @@ using UnityEngine;
 
 public class GameTimeManager : MonoSingleton<GameTimeManager>
 {
+    private void Start() {
+        TypeEventSystem.Global.Register<NextPeriodEvent>(e=>{
+            GoToNextPeriod();
+        }).UnRegisterWhenGameObjectDestroyed(gameObject);
+        DontDestroyOnLoad(gameObject);
+    }
     public int GetCurrentCycle()
     {
         return GameSaveManager.Instance.currentSave.currentCycle;
@@ -49,9 +55,5 @@ public class GameTimeManager : MonoSingleton<GameTimeManager>
     public EventStatus GetCurrentEvent()
     {
         return GetDayEvents().periods[GameManager.TimeName[GetCurrentPeriod()]];
-    }
-    private void Start()
-    {
-        DontDestroyOnLoad(gameObject);
     }
 }

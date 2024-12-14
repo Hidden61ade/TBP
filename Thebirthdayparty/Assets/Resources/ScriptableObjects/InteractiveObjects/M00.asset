@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68e2823158d12f14e96895954da84a0b, type: 3}
-  m_Name: T0
+  m_Name: M00
   m_EditorClassIdentifier: 
-  id: T0
-  obj_name: TripleCactus
-  type: 3
+  id: M00
+  obj_name: A Napkin
+  type: 1
   prefab: {fileID: 8548029597574409284, guid: 67ac93832e0411d4a9c1de7a1486c47a, type: 3}

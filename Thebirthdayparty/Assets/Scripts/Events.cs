@@ -18,3 +18,9 @@ public class OnDayEventTriggered
     }
     public EventStatus Event;
 }
+public class NextPeriodEvent{
+
+}
+public class RequireSaveGame{
+
+}

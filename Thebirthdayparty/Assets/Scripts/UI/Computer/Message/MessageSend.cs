@@ -36,7 +36,19 @@ public class MessageSend : MonoBehaviour
                     Debug.LogError("Error Text Defult");
                     break;
                 case "#SYS:SCE1":
-                    //Todo 触发特殊事件
+                    Debug.Log("here");
+                    StartCoroutine(SCE1());
+                    break;
+                case "#NP":
+                    GameTimeManager.Instance.GoToNextPeriod();
+                    break;
+                case "#LQ":
+                    Debug.Log("Lock quit");
+                    TypeEventSystem.Global.Send<LockQuitButton>();
+                    break;
+                case "#RQ":
+                    Debug.Log("Unlock quit");
+                    TypeEventSystem.Global.Send<UnlockQuitButton>();
                     break;
                 default:
                     try
@@ -44,7 +56,6 @@ public class MessageSend : MonoBehaviour
                         string command = str.Substring(1, 2); // 获取#后面两位字符
                         string argument = str.Substring(str.IndexOf('(') + 1, str.IndexOf(')') - str.IndexOf('(') - 1);
                         // 调用相应的函数
-
                         switch (command)
                         {
                             case "ST":
@@ -56,6 +67,7 @@ public class MessageSend : MonoBehaviour
                             case "AF":
                                 GameSaveManager.Instance.UpdateAffinity(currentCharacter, int.Parse(argument));
                                 break;
+
                             default:
                                 Debug.LogWarning("Unknown command");
                                 break;
@@ -73,5 +85,16 @@ public class MessageSend : MonoBehaviour
         var temp = Instantiate(MsgPrefab, contentParent);
         temp.GetComponent<ComputerMsg.Message>().SetText(str);
         return 1.5f;
+    }
+    IEnumerator SCE1()
+    {
+        Time.timeScale = 0;
+        yield return new WaitForSecondsRealtime(1.5f);
+        GetComponent<ExternalConsoleLauncher>().LaunchExternalConsole();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
     }
 }

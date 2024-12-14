@@ -31,6 +31,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Newtonsoft.Json;
+using QFramework;
 
 public class GameSaveManager : MonoBehaviour
 {
@@ -52,7 +53,11 @@ public class GameSaveManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    private void Start() {
+        TypeEventSystem.Global.Register<RequireSaveGame>(e=>{
+            SaveGame();
+        }).UnRegisterWhenGameObjectDestroyed(gameObject);
+    }
     public void SaveGame()
     {
         try
@@ -108,8 +113,15 @@ public class GameSaveManager : MonoBehaviour
 
     public void AddInteractedItem(string itemId)
     {
+        if (currentSave.interactedItems.Contains(itemId))
+        {
+            return;
+        }
         currentSave.interactedItems.Add(itemId);
-        SaveGame();
+    }
+    public bool HasInteracted(string itemId)
+    {
+        return currentSave.interactedItems.Contains(itemId);
     }
 
     public void AdvanceDay()
@@ -146,7 +158,6 @@ public class GameSaveManager : MonoBehaviour
                 currentSave.collections.specialItems.Add(new CollectionState(itemId, lockedMode));
                 break;
         }
-        SaveGame();
     }
     public CollectionState GetCollectionState(string itemId, string collectionType)
     {

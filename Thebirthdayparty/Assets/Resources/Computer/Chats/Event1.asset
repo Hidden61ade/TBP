@@ -15,6 +15,11 @@ MonoBehaviour:
   EventId: 1
   msgDatas:
   - hasChoice: 0
+    Content: '#LQ'
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
     Content: '#SYS:PASS'
     Choices: []
     isSecondary: 0
@@ -40,7 +45,7 @@ MonoBehaviour:
     isSecondary: 1
     mapping: 1
   - hasChoice: 0
-    Content: "#SYS:SCE1\r"
+    Content: '#SYS:SCE1'
     Choices: []
     isSecondary: 1
     mapping: 2
@@ -99,6 +104,16 @@ MonoBehaviour:
     Content: 'Adam: Thanks for being part of this, Matt.
 
 '
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: '#NP'
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: '#RQ'
     Choices: []
     isSecondary: 0
     mapping: 0

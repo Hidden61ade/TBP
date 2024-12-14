@@ -77,9 +77,13 @@ public class CollectionManager : MonoBehaviour
             return ctrl.lockedStates;
         }
     }
-    public void AddToCollection()
+    public void AddToCollection(string itemID)
     {
-
+        if(collectionDict.TryGetValue(itemID,out CollectionData data)){
+            GameSaveManager.Instance.AddToCollection(data.name,CollectionTypeStringDict[data.collectionType]);
+        }else{
+            Debug.LogError("No such collection: "+ itemID);
+        }
     }
     public CollectionData GetCollectionData(string itemID)
     {

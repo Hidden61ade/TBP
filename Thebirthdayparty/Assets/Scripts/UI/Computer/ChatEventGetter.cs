@@ -12,12 +12,15 @@ public class ChatEventGetter : MonoBehaviour
     private void OnEnable() {
         try
         {
+            if(!mapping.ContainsKey(GameTimeManager.Instance.GetCurrentEvent().eventName)){
+                return;
+            }
             ChatController.Instance.TriggerChat(mapping[GameTimeManager.Instance.GetCurrentEvent().eventName]);
         }
         catch (Exception e)
         {
             Debug.LogError(e);
-            ChatController.Instance.TriggerChat("Test");
+            ChatController.Instance.TriggerChat("Event1");
         }
         
     }
