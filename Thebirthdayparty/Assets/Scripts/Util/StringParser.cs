@@ -1,18 +1,21 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 public static class ParseString
 {
     private static Dictionary<string, bool> tempVariables = new();
-    private static Dictionary<string, bool> variables = new(){
-        {"Napkin",Napkin},
-        {"Departure",Departure},
-        {"Cabin",Cabin}
+    private static Dictionary<string, Func<bool>> variables = new(){
+        {"Napkin",()=>Napkin},
+        {"Departure",()=>Departure},
+        {"Cabin",()=>Cabin}
     };
+
     private static bool Napkin
     {
         get
         {
+            Debug.LogWarning("Get bool Napkin: " + CollectionManager.Instance.IsCollectionUnlocked("M00"));
             return CollectionManager.Instance.IsCollectionUnlocked("M00");
         }
     }
@@ -32,11 +35,7 @@ public static class ParseString
     }
     public static void SetVariableTrue(string variableName)
     {
-        if (variables.ContainsKey(variableName))
-        {
-            variables[variableName] = true;
-        }
-        else if (tempVariables.ContainsKey(variableName))
+        if (tempVariables.ContainsKey(variableName))
         {
             tempVariables[variableName] = true;
         }
@@ -47,13 +46,13 @@ public static class ParseString
     }
     public static void SetVariableFalse(string variableName)
     {
-        if (variables.ContainsKey(variableName))
+        if (tempVariables.ContainsKey(variableName))
         {
-            variables[variableName] = false;
+            tempVariables[variableName] = false;
         }
         else
         {
-            variables.Add(variableName, false);
+            tempVariables.Add(variableName, false);
         }
     }
 
@@ -62,7 +61,7 @@ public static class ParseString
     {
         if (variables.ContainsKey(variableName))
         {
-            return variables[variableName];
+            return variables[variableName]();
         }
         else if (tempVariables.ContainsKey(variableName))
         {
