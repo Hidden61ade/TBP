@@ -33,6 +33,9 @@ public static class ParseString
             return CollectionManager.Instance.IsCollectionUnlocked("G08");
         }
     }
+    public static void ClearTempVariables(){
+        tempVariables.Clear();
+    }
     public static void SetVariableTrue(string variableName)
     {
         if (tempVariables.ContainsKey(variableName))

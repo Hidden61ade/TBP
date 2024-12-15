@@ -59,6 +59,7 @@ public class ComputerUI : MonoSingleton<ComputerUI>
     }
     public void Quit()
     {
+        ParseString.ClearTempVariables();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         TypeEventSystem.Global.Send<InteractEnd>();
