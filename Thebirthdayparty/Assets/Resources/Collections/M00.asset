@@ -15,8 +15,8 @@ MonoBehaviour:
   collectionType: 0
   itemID: M00
   itemName: Napkin from Matt
-  itemIcon: {fileID: 0}
-  itemFullImage: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 12c7f1f65ed057941ab74edb88c6e5a0, type: 3}
+  itemFullImage: {fileID: 21300000, guid: 12c7f1f65ed057941ab74edb88c6e5a0, type: 3}
   descriptionL1: A piece of napkin, written with "Metaplace, a place where all the
     miracles happen." and a signature of Matt.
   descriptionL2: Seems like something from the famous restraurant tErminaL.

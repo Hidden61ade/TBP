@@ -15,8 +15,8 @@ MonoBehaviour:
   collectionType: 0
   itemID: G03
   itemName: Management change report
-  itemIcon: {fileID: 0}
-  itemFullImage: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 973fac8d35dd05d429dd21fdff69dd1d, type: 3}
+  itemFullImage: {fileID: 21300000, guid: 973fac8d35dd05d429dd21fdff69dd1d, type: 3}
   descriptionL1: 'A business media article titled ''Industry Shocked: Metaspace Co-founder
     George''s Sudden Departure.'
   descriptionL2: 'The article details George''s sudden departure and his disagreements

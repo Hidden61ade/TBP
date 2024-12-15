@@ -15,14 +15,22 @@ MonoBehaviour:
   collectionType: 0
   itemID: G08
   itemName: AI Developement Email
-  itemIcon: {fileID: 0}
-  itemFullImage: {fileID: 0}
-  descriptionL1: 'Email correspondence thread titled ''Request for Input: AI System
-    Development Based on Metaplace.'
-  descriptionL2: The email records show an intense internal discussion. George proposed
-    implementing strict ethical restrictions in AI development, while some engineers
-    argued this would limit technological potential. Notably, in the final email,
-    George warned that without preventive measures, AI might break free from human-set
-    frameworks. Several employees expressed understanding and support for these concerns
-    in their replies.
+  itemIcon: {fileID: 21300000, guid: c0cb1118c74a9d24eada74ed2d7d9ba4, type: 3}
+  itemFullImage: {fileID: 21300000, guid: c0cb1118c74a9d24eada74ed2d7d9ba4, type: 3}
+  descriptionL1: '[It shows George''s ustalk page, with background of a lakeside
+    cabin.]
+
+    Kitten_makes_quantumphyx
+
+    Personal Signature: When its kingdom
+    come.
+
+    Birthday:12/10'
+  descriptionL2: 'George still has his bizzare nickname......
+
+    Contrary from
+    that, the background of it is a true photo of a lake-side cottage.
+
+    The
+    place seems very familiar to you somehow......'
   unlockCondition: 
