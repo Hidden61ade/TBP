@@ -7,7 +7,8 @@ public class ChatEventGetter : MonoBehaviour
 {
     public Dictionary<string,string> mapping = new(){
         {"friend_request","Event1"},
-        {"venue_discussion","Event2"}
+        {"venue_discussion","Event2"},
+        {"theme_discussion","Event3"}
     };
     private void OnEnable() {
         try

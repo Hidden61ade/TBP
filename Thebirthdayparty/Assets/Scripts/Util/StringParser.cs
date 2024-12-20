@@ -8,9 +8,11 @@ public static class ParseString
     private static Dictionary<string, Func<bool>> variables = new(){
         {"Napkin",()=>Napkin},
         {"Departure",()=>Departure},
-        {"Cabin",()=>Cabin}
+        {"Cabin",()=>Cabin},
+        {"OldComputer",()=>OldComputer},
+        {"TrioPhoto",()=>TrioPhoto}
     };
-
+    #region Variables Check
     private static bool Napkin
     {
         get
@@ -33,7 +35,22 @@ public static class ParseString
             return CollectionManager.Instance.IsCollectionUnlocked("G08");
         }
     }
-    public static void ClearTempVariables(){
+    private static bool OldComputer
+    {
+        get
+        {
+            return false;
+        }
+    }
+    private static bool TrioPhoto{
+        get{
+            return true;
+        }
+    }
+    #endregion
+    #region Methods
+    public static void ClearTempVariables()
+    {
         tempVariables.Clear();
     }
     public static void SetVariableTrue(string variableName)
@@ -145,4 +162,5 @@ public static class ParseString
 
         return new string[] { part1, part2 };
     }
+    #endregion
 }

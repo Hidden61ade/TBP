@@ -82,7 +82,7 @@ public class CollectionManager : MonoBehaviour
         if(collectionDict.TryGetValue(itemID,out CollectionData data)){
             GameSaveManager.Instance.AddToCollection(data.name,CollectionTypeStringDict[data.collectionType]);
         }else{
-            Debug.LogError("No such collection: "+ itemID);
+            Debug.LogWarning("No such collection: "+ itemID);
         }
     }
     public CollectionData GetCollectionData(string itemID)

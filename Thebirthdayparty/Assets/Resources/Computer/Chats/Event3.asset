@@ -1,0 +1,176 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c5df3ec13761874594a1b172da83f25, type: 3}
+  m_Name: Event3
+  m_EditorClassIdentifier: 
+  EventId: 3
+  msgDatas:
+  - hasChoice: 0
+    Content: 'Adam: Matt, about the party theme...'
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: 'Adam: We need to plan something special.'
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 1
+    Content: 'Adam: It''s George''s birthday after all.'
+    Choices:
+    - $How about a retro tech theme?#ST(T1)
+    - $A simple, cozy family gathering style.#ST(T2)
+    - Let me think of something else.
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: '#SYS:PASS'
+    Choices: []
+    isSecondary: 1
+    mapping: 0
+  - hasChoice: 0
+    Content: 'Adam: I''ve actually had an idea, maybe just use mine since then.'
+    Choices: []
+    isSecondary: 1
+    mapping: 3
+  - hasChoice: 0
+    Content: $(T1)#ST(T1orT2);#SYS:PASS$
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: $(T2)#ST(T1orT2);#SYS:PASS$
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: '$(T1orT2)Adam: This idea...;Adam: Anyway.$'
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 1
+    Content: $(T1,OldComputer)#ST(T1O);#SYS:FP$
+    Choices:
+    - $George still keeps his first computer, he'd love this.#AF(2)
+    - $I remember he loves collecting these.#AF(1)
+    - $Just a suggestion.#AF(-1)
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: '#SYS:PASS'
+    Choices: []
+    isSecondary: 1
+    mapping: 0
+  - hasChoice: 0
+    Content: $(T1O)#SYS:PASS;#ST(NT1O)$
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 1
+    Content: $(T1,NT1O)#SYS:PASS;#SYS:FP$
+    Choices:
+    - $I remember he loves collecting these.#AF(1)
+    - $Just a suggestion.#AF(-1)
+    - 
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 1
+    Content: $(T2,TrioPhoto)#ST(T2T);#SYS:FP$
+    Choices:
+    - $Just like our first party in your basement.#AF(2)
+    - $It's been a while since we gathered like that.#AF(1)
+    - $Just keep it simple then.#AF(-1)
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: '#SYS:PASS'
+    Choices: []
+    isSecondary: 1
+    mapping: 0
+  - hasChoice: 0
+    Content: $(T2T)#SYS:PASS;#ST(NT2T)$
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 1
+    Content: $(T2,NT2T)#SYS:PASS;#SYS:FP$
+    Choices:
+    - $It's been a while since we gathered like that.#AF(1)
+    - $Just keep it simple then.#AF(-1)
+    - 
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: "Adam: Speaking of this"
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: "Adam: do you remember that we promised before?"
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 1
+    Content: $(Napkin)#SYS:PASS;#SYS:FP$
+    Choices:
+    - $At The Terminal, we promised to change the world.#ST(SD)
+    - Sorry I dont't remember that.
+    - 
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: '#AF(-1)'
+    Choices: []
+    isSecondary: 1
+    mapping: 0
+  - hasChoice: 1
+    Content: $(SD)#SYS:FP;#SYS:PASS$
+    Choices:
+    - Sorry I dont't remember that.
+    - 
+    - 
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: '#SYS:PASS'
+    Choices: []
+    isSecondary: 1
+    mapping: 0
+  - hasChoice: 0
+    Content: $(SD)#AF(1);#SYS:PASS$
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 1
+    Content: '$(SD)Adam: Can''t believe you remember...
+
+      We thought we could
+      create a perfect world back then.;#SYS:FP$'
+    Choices:
+    - $Maybe we did create something.#AF(2)
+    - $Does any of that matter now?#AF(-1)
+    - $Let's make this party a new beginning.#AF(1)
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: '#SYS:PASS'
+    Choices: []
+    isSecondary: 1
+    mapping: 0
+  - hasChoice: 0
+    Content: 'Adam: Alright, theme settled then.
+
+      I think George will like
+      it.'
+    Choices: []
+    isSecondary: 0
+    mapping: 0

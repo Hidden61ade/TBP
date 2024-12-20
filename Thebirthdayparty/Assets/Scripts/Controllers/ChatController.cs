@@ -56,6 +56,15 @@ public class ChatController : MonoSingleton<ChatController>
     {   var A = ParseString.ParseChoice(choices[0]);
         var B = ParseString.ParseChoice(choices[1]);
         var C = ParseString.ParseChoice(choices[2]);
+        if(string.IsNullOrEmpty(A[0])){
+            Choice1.interactable = false;
+        }
+        if(string.IsNullOrEmpty(B[0])){
+            Choice2.interactable = false;
+        }
+        if(string.IsNullOrEmpty(C[0])){
+            Choice3.interactable = false;
+        }
         Choice1Ctrl = A[1];
         Choice2Ctrl = B[1];
         Choice3Ctrl = C[1];
@@ -183,6 +192,7 @@ public class ChatController : MonoSingleton<ChatController>
             {
                 TypeEventSystem.Global.Send<OnChoiceActivated>(new(currentNode.choices));
                 yield return new WaitUntil(() => { return choice != -1; });
+                yield return new WaitForSeconds(1);
                 currentNode = currentNode.linkToBranches[choice] ?? currentNode.linkToBranches[0];
                 continue;
             }
