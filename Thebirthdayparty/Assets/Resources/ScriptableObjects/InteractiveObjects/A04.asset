@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68e2823158d12f14e96895954da84a0b, type: 3}
-  m_Name: G03
+  m_Name: A04
   m_EditorClassIdentifier: 
-  id: G03
-  obj_name: NEWSPAPER
+  id: A04
+  obj_name: VIRUS ARTICLE
   type: 1
-  prefab: {fileID: 8548029597574409284, guid: c249256041dc43f468922549f9df61ba, type: 3}
+  prefab: {fileID: 8548029597574409284, guid: 1a561b3131912b341809895e9904524c, type: 3}

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86cb2df0fd95c9e4c99acc1ebb2416e0, type: 3}
+  m_Name: A00
+  m_EditorClassIdentifier: 
+  collectionType: 0
+  itemID: A00
+  itemName: Adam's napkin
+  itemIcon: {fileID: 21300000, guid: e1f31134fcc019744a7b155203fd061d, type: 3}
+  itemFullImage: {fileID: 21300000, guid: e1f31134fcc019744a7b155203fd061d, type: 3}
+  descriptionL1: 'A piece of napkin, written with "...coped with the true AI trained
+    with the data it has, we have the assistant that handles all the chores." and
+    a signature of Adam.
+
+'
+  descriptionL2: 'Seems like something from the famous restraurant tErminaL.
+
+'
+  unlockCondition: 

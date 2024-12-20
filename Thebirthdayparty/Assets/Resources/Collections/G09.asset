@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86cb2df0fd95c9e4c99acc1ebb2416e0, type: 3}
+  m_Name: G09
+  m_EditorClassIdentifier: 
+  collectionType: 0
+  itemID: G09
+  itemName: Old Photo
+  itemIcon: {fileID: 21300000, guid: 48b810f74014da348b553ad644364ac3, type: 3}
+  itemFullImage: {fileID: 21300000, guid: 48b810f74014da348b553ad644364ac3, type: 3}
+  descriptionL1: '"A faded photograph taken in Matt''s basement, showing three young
+    people gathered around an old computer"
+
+'
+  descriptionL2: '"The back of the photo reads ''Summer 1999 - Our First Project''.
+    The young George, Matt, and Adam appear to be fresh college students. The computer
+    screen in front of them displays some simple code. Pizza boxes and cola cans
+    are scattered on the table, with sci-fi movie posters on the wall. Most striking
+    is the unbridled enthusiasm on their faces. A coffee stain marks one corner of
+    the photograph."
+
+'
+  unlockCondition: 

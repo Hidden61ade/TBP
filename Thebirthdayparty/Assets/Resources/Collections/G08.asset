@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectionType: 0
   itemID: G08
-  itemName: AI Developement Email
+  itemName: Friend's UI
   itemIcon: {fileID: 21300000, guid: c0cb1118c74a9d24eada74ed2d7d9ba4, type: 3}
   itemFullImage: {fileID: 21300000, guid: c0cb1118c74a9d24eada74ed2d7d9ba4, type: 3}
   descriptionL1: '[It shows George''s ustalk page, with background of a lakeside
@@ -31,6 +31,6 @@ MonoBehaviour:
     Contrary from
     that, the background of it is a true photo of a lake-side cottage.
 
-    The
-    place seems very familiar to you somehow......'
+    The place
+    seems very familiar to you somehow......'
   unlockCondition: 
