@@ -62,15 +62,15 @@ public class InspectorButton : Editor
     }
 }
 [System.AttributeUsage(System.AttributeTargets.Method)]
-public class InspectorButtonAttribute : PropertyAttribute
+public class InspectorButtonAtt : PropertyAttribute
 {
     public readonly string Name;
  
-    public InspectorButtonAttribute()
+    public InspectorButtonAtt()
     {
     }
  
-    public InspectorButtonAttribute(string name)
+    public InspectorButtonAtt(string name)
     {
         Name = name;
     }

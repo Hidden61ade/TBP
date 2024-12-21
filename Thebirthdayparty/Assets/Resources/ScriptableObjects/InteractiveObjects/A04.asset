@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: A04
   m_EditorClassIdentifier: 
   id: A04
-  obj_name: VIRUS ARTICLE
+  obj_name: Virus Article
   type: 1
-  prefab: {fileID: 8548029597574409284, guid: 1a561b3131912b341809895e9904524c, type: 3}
+  prefab: {fileID: 8548029597574409284, guid: 47f9d8729851ce244af3ded9d06420c6, type: 3}

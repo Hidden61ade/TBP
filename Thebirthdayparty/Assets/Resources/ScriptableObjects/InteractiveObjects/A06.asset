@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: A06
   m_EditorClassIdentifier: 
   id: A06
-  obj_name: PRICE NEWS
+  obj_name: Price News
   type: 1
-  prefab: {fileID: 8548029597574409284, guid: 1a561b3131912b341809895e9904524c, type: 3}
+  prefab: {fileID: 8548029597574409284, guid: c7cf17777539a5e4d96e410e3d33a936, type: 3}

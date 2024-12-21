@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: G04
   m_EditorClassIdentifier: 
   id: G04
-  obj_name: MAIL
+  obj_name: A mail
   type: 1
-  prefab: {fileID: 8548029597574409284, guid: 8fd69346db260484c91f0853479958c7, type: 3}
+  prefab: {fileID: 8548029597574409284, guid: cfc285df5f4ca85498b9c6186109a55c, type: 3}

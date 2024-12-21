@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: G03
   m_EditorClassIdentifier: 
   id: G03
-  obj_name: NEWSPAPER
+  obj_name: Newspaper
   type: 1
   prefab: {fileID: 8548029597574409284, guid: c249256041dc43f468922549f9df61ba, type: 3}

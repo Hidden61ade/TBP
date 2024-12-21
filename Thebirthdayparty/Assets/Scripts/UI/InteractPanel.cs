@@ -39,14 +39,14 @@ public class InteractPanel : MonoSingleton<InteractPanel>
         canvasGroup.alpha = target;
         action?.Invoke();
     }
-    public void Show(string[] contents)
+    public void Show(string[] contents, bool showAll = false)
     {
         if (!isActive)
         {
             Activate();
         }
         textPrinter.textArray = contents;
-        textPrinter.PrintTextArray();
+        textPrinter.PrintTextArray(showAll);
     }
 }
 public class InteractTextsStart { }

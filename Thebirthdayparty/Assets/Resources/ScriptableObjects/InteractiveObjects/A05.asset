@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: A05
   m_EditorClassIdentifier: 
   id: A05
-  obj_name: File
+  obj_name: A File
   type: 1
-  prefab: {fileID: 8548029597574409284, guid: 1a561b3131912b341809895e9904524c, type: 3}
+  prefab: {fileID: 8548029597574409284, guid: c917e0af43a1ea94aa3bc4163b90d1a6, type: 3}

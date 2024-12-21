@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: A01
   m_EditorClassIdentifier: 
   id: A01
-  obj_name: BIOGRAPHY
+  obj_name: Biography
   type: 1
-  prefab: {fileID: 8548029597574409284, guid: 1a561b3131912b341809895e9904524c, type: 3}
+  prefab: {fileID: 8548029597574409284, guid: 5e9a4fa17c4e37341a57f6c34b87adab, type: 3}

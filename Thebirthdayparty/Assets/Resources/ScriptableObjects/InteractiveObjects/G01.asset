@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: G01
   m_EditorClassIdentifier: 
   id: G01
-  obj_name: EXTINCT ARTICLE
+  obj_name: Article about extiction
   type: 1
-  prefab: {fileID: 8548029597574409284, guid: 8fd69346db260484c91f0853479958c7, type: 3}
+  prefab: {fileID: 8548029597574409284, guid: 3682226b97f6c7344a2c920bf2542596, type: 3}

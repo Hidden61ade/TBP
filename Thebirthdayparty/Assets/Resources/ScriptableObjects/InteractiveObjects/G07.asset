@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: G07
   m_EditorClassIdentifier: 
   id: G07
-  obj_name: OLD COMPUTER
+  obj_name: Old photo
   type: 1
-  prefab: {fileID: 8548029597574409284, guid: 8fd69346db260484c91f0853479958c7, type: 3}
+  prefab: {fileID: 8548029597574409284, guid: d6e6b930f1ae4a742b3f3d1e97d5caef, type: 3}

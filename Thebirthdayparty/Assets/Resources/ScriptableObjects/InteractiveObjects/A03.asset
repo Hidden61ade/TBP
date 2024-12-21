@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: A03
   m_EditorClassIdentifier: 
   id: A03
-  obj_name: INTRODUCTION
+  obj_name: Introduction
   type: 1
-  prefab: {fileID: 8548029597574409284, guid: 1a561b3131912b341809895e9904524c, type: 3}
+  prefab: {fileID: 8548029597574409284, guid: ee9fec5606f937a42a6325ac7bdc8bdb, type: 3}

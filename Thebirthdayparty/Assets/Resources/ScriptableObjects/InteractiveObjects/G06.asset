@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: G06
   m_EditorClassIdentifier: 
   id: G06
-  obj_name: CLOCK
+  obj_name: Old computer
   type: 1
-  prefab: {fileID: 8548029597574409284, guid: 8fd69346db260484c91f0853479958c7, type: 3}
+  prefab: {fileID: 8548029597574409284, guid: 0c4af15c132af934988ca119155e01d7, type: 3}

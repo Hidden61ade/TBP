@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: G08
   m_EditorClassIdentifier: 
   id: G08
-  obj_name: A Webpage
+  obj_name: A WEBPAGE
   type: 1
   prefab: {fileID: 8548029597574409284, guid: 30214d356feaafd41a649d712c3a9f78, type: 3}

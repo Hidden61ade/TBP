@@ -17,7 +17,8 @@ public class TextPrinter : MonoBehaviour
     public string[] textArray;
     void Update()
     {
-        if(!interactable){
+        if (!interactable)
+        {
             return;
         }
         // 检测鼠标左键点击
@@ -37,7 +38,7 @@ public class TextPrinter : MonoBehaviour
 
     // 启动打印一组文本的过程
     [InspectorButton("打印")]
-    public void PrintTextArray()
+    public void PrintTextArray(bool showAll)
     {
         // 如果当前有文本在打印，停止当前的打印
         if (isTyping)
@@ -50,61 +51,65 @@ public class TextPrinter : MonoBehaviour
         currentTextIndex = 0;
 
         // 开始打印文本数组中的第一条文本
-        StartCoroutine(PrintTexts(textArray));
+        StartCoroutine(PrintTexts(textArray, showAll));
     }
 
     // 打印一组文本的协程
-    private IEnumerator PrintTexts(string[] intextArray)
-{
-    // 确定打印范围
-    int startIndex = 0;
-    int endIndex = 0;
-    int currentCycle = GameSaveManager.Instance.currentSave.currentCycle;
-    
-    switch (currentCycle)
+    private IEnumerator PrintTexts(string[] intextArray, bool showAll)
     {
-        case 1:
-            startIndex = 0;
-            endIndex = Math.Min(3, textArray.Length);
-            break;
-        case 2:
-            startIndex = 3;
-            endIndex = Math.Min(6, textArray.Length);
-            break;
-        case 3:
-            startIndex = 6;
-            endIndex = Math.Min(9, textArray.Length);
-            break;
-        default:
-            // 如果cycle > 3，显示最后3条文本
+        // 确定打印范围
+        int startIndex = 0;
+        int endIndex = 0;
+        int currentCycle = GameSaveManager.Instance.currentSave.currentCycle;
+
+        switch (currentCycle)
+        {
+            case 1:
+                startIndex = 0;
+                endIndex = Math.Min(3, textArray.Length);
+                break;
+            case 2:
+                startIndex = 3;
+                endIndex = Math.Min(6, textArray.Length);
+                break;
+            case 3:
+                startIndex = 6;
+                endIndex = Math.Min(9, textArray.Length);
+                break;
+            default:
+                // 如果cycle > 3，显示最后3条文本
+                startIndex = Math.Max(0, textArray.Length - 3);
+                endIndex = textArray.Length;
+                break;
+        }
+
+        // 如果起始索引超出数组范围，显示最后3条
+        if (startIndex >= textArray.Length)
+        {
             startIndex = Math.Max(0, textArray.Length - 3);
             endIndex = textArray.Length;
-            break;
+        }
+
+        // 设置当前文本索引为起始位置
+        currentTextIndex = startIndex;
+        if (showAll)
+        {
+            currentTextIndex = 0;
+            endIndex = textArray.Length;
+        }
+        // 在确定的范围内打印文本
+        while (currentTextIndex < endIndex)
+        {
+            isTyping = true;
+            typingCoroutine = StartCoroutine(TypeText(textArray[currentTextIndex]));
+
+            yield return new WaitUntil(() => !isTyping);
+            isAbleToMove = false;
+            yield return new WaitUntil(() => isAbleToMove);
+        }
+
+        TypeEventSystem.Global.Send<InteractTextParagraphQuited>();
     }
-
-    // 如果起始索引超出数组范围，显示最后3条
-    if (startIndex >= textArray.Length)
-    {
-        startIndex = Math.Max(0, textArray.Length - 3);
-        endIndex = textArray.Length;
-    }
-
-    // 设置当前文本索引为起始位置
-    currentTextIndex = startIndex;
-
-    // 在确定的范围内打印文本
-    while (currentTextIndex < endIndex)
-    {
-        isTyping = true;
-        typingCoroutine = StartCoroutine(TypeText(textArray[currentTextIndex]));
-
-        yield return new WaitUntil(() => !isTyping);
-        isAbleToMove = false;
-        yield return new WaitUntil(() => isAbleToMove);
-    }
-    
-    TypeEventSystem.Global.Send<InteractTextParagraphQuited>();
-}
 
     // 逐字打印文本的协程
     private IEnumerator TypeText(string text)

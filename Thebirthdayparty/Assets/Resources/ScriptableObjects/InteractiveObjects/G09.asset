@@ -15,4 +15,4 @@ MonoBehaviour:
   id: G09
   obj_name: PHOTO
   type: 1
-  prefab: {fileID: 8548029597574409284, guid: 30214d356feaafd41a649d712c3a9f78, type: 3}
+  prefab: {fileID: 8548029597574409284, guid: 743de25f162282849bf4affdd1326c2d, type: 3}

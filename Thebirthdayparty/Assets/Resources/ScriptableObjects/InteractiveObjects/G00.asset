@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: G00
   m_EditorClassIdentifier: 
   id: G00
-  obj_name: GEORGE NAPKIN
+  obj_name: George's Napkin
   type: 1
   prefab: {fileID: 8548029597574409284, guid: 8fd69346db260484c91f0853479958c7, type: 3}

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: G05
   m_EditorClassIdentifier: 
   id: G05
-  obj_name: SPEAKER
+  obj_name: Speaker
   type: 1
-  prefab: {fileID: 8548029597574409284, guid: 8fd69346db260484c91f0853479958c7, type: 3}
+  prefab: {fileID: 8548029597574409284, guid: 8f62894ff73f09d4c99042fe2547671e, type: 3}

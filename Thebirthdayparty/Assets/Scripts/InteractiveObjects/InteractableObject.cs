@@ -22,6 +22,9 @@ namespace Interactable
         #endregion
         public void OnTriggered()
         {
+            if(!this.enabled){
+                return;
+            }
             temp = Instantiate(interactiveData.prefab, transform);
             GameSaveManager.Instance.AddInteractedItem(DataName);
             CollectionManager.Instance.AddToCollection(DataName);
