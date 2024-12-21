@@ -110,12 +110,12 @@ MonoBehaviour:
     isSecondary: 0
     mapping: 0
   - hasChoice: 0
-    Content: "Adam: Speaking of this"
+    Content: 'Adam: Speaking of this'
     Choices: []
     isSecondary: 0
     mapping: 0
   - hasChoice: 0
-    Content: "Adam: do you remember that we promised before?"
+    Content: 'Adam: do you remember that we promised before?'
     Choices: []
     isSecondary: 0
     mapping: 0
@@ -123,17 +123,27 @@ MonoBehaviour:
     Content: $(Napkin)#SYS:PASS;#SYS:FP$
     Choices:
     - $At The Terminal, we promised to change the world.#ST(SD)
-    - Sorry I dont't remember that.
+    - $Sorry I dont't remember that.#ST(SN)
     - 
     isSecondary: 0
     mapping: 0
   - hasChoice: 0
-    Content: '#AF(-1)'
+    Content: "$(SN)#AF(-1);#SYS:PASS$"
     Choices: []
-    isSecondary: 1
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: "$(SD)#ST(SDNO);#SYS:PASS$"
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: "$(SN)#ST(SDNO);#SYS:PASS$"
+    Choices: []
+    isSecondary: 0
     mapping: 0
   - hasChoice: 1
-    Content: $(SD)#SYS:FP;#SYS:PASS$
+    Content: $(SDNO)#SYS:FP;#SYS:PASS$
     Choices:
     - Sorry I dont't remember that.
     - 
