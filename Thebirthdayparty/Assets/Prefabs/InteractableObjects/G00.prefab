@@ -44,3 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adaf062e9142adc44b266c258dc7d99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  content:
+  - 'A piece of napkin, written with "People would think it is the Oasis, but with 
+    one final step, it will become SAO" and a signature of George.'
+  - Seems like something from the famous restaurant tErminaL.
+  - The reference to popular virtual reality fiction seems particularly poignant.

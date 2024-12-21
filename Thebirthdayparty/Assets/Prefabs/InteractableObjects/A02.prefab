@@ -44,3 +44,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20236160483ae584bb30d6c7fe43c411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  content:
+  - 'An online news article titled "Internal Discord at Metaplace: Where Will the 
+    Founding Team Go?"'
+  - The article soberly describes the ideological conflicts between the three founders. 
+    Citing multiple anonymous insiders, it points to divergent visions for the project\u2019s 
+    future.
+  - Adam\u2019s push for expanded commercialization conflicts with George\u2019s emphasis 
+    on strict technological boundaries, while Matt oscillates between these viewpoints.
+  - The news content begins showing inconsistent details. Some paragraphs describe 
+    events in a confused chronology, as if narrating multiple versions simultaneously.
+  - Strange dialogues appear within the original quotes, such as George mentioning 
+    'time isn\u2019t linear' and Adam discussing 'the inevitability of consciousness uploading.'
+  - Matt\u2019s statements become particularly contradictory, as if statements from 
+    different timepoints were forcibly spliced together.

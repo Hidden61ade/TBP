@@ -44,3 +44,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42e5c9ef520215a489341e9d4e424ed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  content:
+  - 'An elegantly designed company brochure featuring the Metaplace logo.'
+  - This promotional material showcases Metaplace\u2019s grand vision. It opens with 
+    an idealistic manifesto: 'Redefining humanity\u2019s relationship with the digital world.'
+  - The material includes interviews with all three founders, particularly highlighting 
+    Adam\u2019s ambitious plans for consciousness digitization.
+  - The brochure\u2019s content begins showing instability. The company timeline splits 
+    into multiple branches, each pointing to different development directions.
+  - Product introduction pages alternate between showing a complete metaverse ecosystem 
+    and scattered code fragments.
+  - The founders\u2019 photos become blurry, sometimes disappearing entirely, replaced 
+    by abstract technological patterns.
+  - The entire article becomes a temporally chaotic narrative. Market data shows trading 
+    records from multiple parallel timelines, each pointing to different outcomes.
+  - The final section transforms into a future market crash report, detailing a global 
+    financial crisis triggered by unknown causes.
+  - Some paragraphs even contain retrospective analysis of this very moment.

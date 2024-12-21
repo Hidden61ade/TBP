@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using QFramework;
+using System;
 
 public class TextPrinter : MonoBehaviour
 {
@@ -54,20 +55,56 @@ public class TextPrinter : MonoBehaviour
 
     // 打印一组文本的协程
     private IEnumerator PrintTexts(string[] intextArray)
+{
+    // 确定打印范围
+    int startIndex = 0;
+    int endIndex = 0;
+    int currentCycle = GameSaveManager.Instance.currentSave.currentCycle;
+    
+    switch (currentCycle)
     {
-        while (currentTextIndex < textArray.Length)
-        {
-            // 开始打印当前文本
-            isTyping = true;
-            typingCoroutine = StartCoroutine(TypeText(textArray[currentTextIndex]));
-
-            // 等待当前文本打印完毕后，再显示下一条文本
-            yield return new WaitUntil(() => !isTyping);
-            isAbleToMove = false;
-            yield return new WaitUntil(() => isAbleToMove);
-        }
-        TypeEventSystem.Global.Send<InteractTextParagraphQuited>();
+        case 1:
+            startIndex = 0;
+            endIndex = Math.Min(3, textArray.Length);
+            break;
+        case 2:
+            startIndex = 3;
+            endIndex = Math.Min(6, textArray.Length);
+            break;
+        case 3:
+            startIndex = 6;
+            endIndex = Math.Min(9, textArray.Length);
+            break;
+        default:
+            // 如果cycle > 3，显示最后3条文本
+            startIndex = Math.Max(0, textArray.Length - 3);
+            endIndex = textArray.Length;
+            break;
     }
+
+    // 如果起始索引超出数组范围，显示最后3条
+    if (startIndex >= textArray.Length)
+    {
+        startIndex = Math.Max(0, textArray.Length - 3);
+        endIndex = textArray.Length;
+    }
+
+    // 设置当前文本索引为起始位置
+    currentTextIndex = startIndex;
+
+    // 在确定的范围内打印文本
+    while (currentTextIndex < endIndex)
+    {
+        isTyping = true;
+        typingCoroutine = StartCoroutine(TypeText(textArray[currentTextIndex]));
+
+        yield return new WaitUntil(() => !isTyping);
+        isAbleToMove = false;
+        yield return new WaitUntil(() => isAbleToMove);
+    }
+    
+    TypeEventSystem.Global.Send<InteractTextParagraphQuited>();
+}
 
     // 逐字打印文本的协程
     private IEnumerator TypeText(string text)
@@ -100,5 +137,11 @@ public class TextPrinter : MonoBehaviour
             isAbleToMove = false;
             currentTextIndex++;  // 当前文本索引加1
         }
+    }
+
+    // 检查循环的方法
+    private bool CheckCycleCondition(int requiredCycle)
+    {
+        return GameSaveManager.Instance.currentSave.currentCycle >= requiredCycle;
     }
 }

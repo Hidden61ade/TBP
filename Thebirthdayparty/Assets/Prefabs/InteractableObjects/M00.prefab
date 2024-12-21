@@ -45,6 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   content:
-  - This is a napkin from a restaurant.
-  - It's mine, I took it from The Terminal.
-  - It reads "Metaplace, a place where all the miracles happen."
+  - 'A piece of napkin, written with "Metaplace, a place where all the miracles happen." and a signature of Matt.'
+  - Seems like something from the famous restaurant tErminaL.
+  - A curious note that suggests Matt''s enthusiasm for the project.

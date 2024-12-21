@@ -45,9 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   content:
-  - 'This is a business media article titled "Industry Shocked: Metaspace Co-founder
-    George''s Sudden Departure."'
-  - The article explains George's unexpected resignation, highlighting his disagreements
-    with the company's future direction.
-  - 'It quotes his resignation statement: "Technological development must prioritize
-    human welfare," and reveals his heated disputes with the board regarding AI issues.'
+  - 'A business media article titled "Industry Shocked: Metaspace Co-founder George\u2019s 
+    Sudden Departure"'
+  - The report details George\u2019s unexpected resignation and his disagreements over 
+    the company\u2019s direction. His departure statement emphasizes: "Technological 
+    development must prioritize human welfare."
+  - The article mentions his heated disputes with the board over AI development and 
+    notes that he retained patents for certain key technologies.

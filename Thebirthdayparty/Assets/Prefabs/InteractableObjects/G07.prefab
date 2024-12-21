@@ -44,3 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f361e4a2d691ace42b56f663f02d401f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  content:
+  - 'A faded photograph taken in Matt\u2019s basement, showing three young people 
+    gathered around an old computer'
+  - The back of the photo reads "Summer 1999 - Our First Project". The young George, 
+    Matt, and Adam appear to be fresh college students.
+  - Pizza boxes and cola cans are scattered on the table, with sci-fi movie posters 
+    on the wall. Most striking is the unbridled enthusiasm on their faces.

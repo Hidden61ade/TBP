@@ -44,3 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0040dba30db92c74c96ac76dfbd24c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  content:
+  - 'An ordinary black Bluetooth speaker, appearing unremarkable'
+  - On the bottom of the speaker, written in marker: "The future is in human hands. 
+    —George"
+  - The simple message carries an unexpectedly heavy weight.

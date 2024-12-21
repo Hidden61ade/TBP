@@ -44,3 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3b244d7150adf4e835d0b7185c4cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  content:
+  - 'A well-maintained 1980s personal computer, an Apple II model, with several 
+    yellowed manuscripts beside it'
+  - The computer appears regularly maintained, with well-preserved keyboard and monitor. 
+    The manuscripts contain early programming code, with "First Step into Digital World 
+    - 1985" scribbled in the margins.
+  - A note attached to the monitor reads "Never forget where we started." The age of 
+    the paper and ink suggests these items are genuinely from that era.
