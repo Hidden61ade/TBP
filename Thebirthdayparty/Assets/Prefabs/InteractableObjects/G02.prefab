@@ -44,3 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e93ca9896ce93e14ca66d42304b84189, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  content:
+  - 'A beautifully packaged CD of David Bowie\u2019s "The Man Who Sold The World" 
+    album with a handwritten card'
+  - The handwritten card reads: "To Matt, hope you\u2019ll appreciate this classic. 
+    Sometimes the answers are hidden in the lyrics. —George"
+  - There\u2019s also a concert ticket stub tucked inside, dated 2023 for a cover 
+    band performance.

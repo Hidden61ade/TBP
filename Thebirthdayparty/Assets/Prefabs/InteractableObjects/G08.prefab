@@ -44,3 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: becddc24dc237ad44bbde7166f88aa50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  content:
+  - 'Kitten_makes_quantumphyx Personal Signature: When its kingdom come. Birthday:12/10'
+  - George still has his bizarre nickname...... Contrary from that, the background of 
+    it is a true photo of a lake-side cottage.
+  - The place seems very familiar to you somehow......

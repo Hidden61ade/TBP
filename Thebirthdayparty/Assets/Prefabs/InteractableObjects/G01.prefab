@@ -44,3 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f75cf841f3bbd3498b165c519a14bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  content:
+  - 'A paper published in Nature titled "Periodicity in Mass Extinctions: A New Data 
+    Analysis Perspective"'
+  - Through analysis of geological records and fossil data, the paper presents a striking 
+    finding: mass extinctions on Earth appear to follow a regular cycle.
+  - The authors\u2019 mathematical model suggests the next extinction might arrive 
+    sooner than expected, with human activities potentially accelerating the cycle.
