@@ -40,7 +40,7 @@ public class MessageSend : MonoBehaviour
                     StartCoroutine(SCE1());
                     break;
                 case "#NP":
-                    GameTimeManager.Instance.GoToNextPeriod();
+                    TypeEventSystem.Global.Send<NextPeriodEvent>();
                     break;
                 case "#LQ":
                     Debug.Log("Lock quit");

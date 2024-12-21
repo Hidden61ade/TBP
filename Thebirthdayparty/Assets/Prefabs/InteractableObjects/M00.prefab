@@ -44,3 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e092f30673aaca34fa0b6712f8844408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  content:
+  - This is a napkin from a restaurant.
+  - It's mine, I took it from The Terminal.
+  - It reads "Metaplace, a place where all the miracles happen."

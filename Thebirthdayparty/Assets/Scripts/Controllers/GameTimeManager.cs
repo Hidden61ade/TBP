@@ -12,6 +12,7 @@ public class GameTimeManager : MonoSingleton<GameTimeManager>
         DontDestroyOnLoad(gameObject);
     }
     IEnumerator AskForNext(){
+        Debug.Log("Triggered");
         yield return new WaitUntil(()=>SceneManager.GetActiveScene().name.Equals("SampleScene"));
         GoToNextPeriod();
     }
