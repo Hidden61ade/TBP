@@ -44,3 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82a0a9bf2a4895d44b8ed204033cdf73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  content:
+  - 'This is a business media article titled "Industry Shocked: Metaspace Co-founder
+    George''s Sudden Departure."'
+  - The article explains George's unexpected resignation, highlighting his disagreements
+    with the company's future direction.
+  - 'It quotes his resignation statement: "Technological development must prioritize
+    human welfare," and reveals his heated disputes with the board regarding AI issues.'

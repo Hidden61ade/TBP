@@ -44,3 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d77cc8954a068094ab8fb235fe29fec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  content:
+  - 'This is a napkin with the note: "...coped with the true AI trained with the
+    data it has, we have the assistant that handles all the chores," signed by Adam.'
+  - It seems like something Adam wrote down, possibly in a moment of inspiration.
+  - The note suggests his thoughts on AI and how it could take care of daily tasks.
