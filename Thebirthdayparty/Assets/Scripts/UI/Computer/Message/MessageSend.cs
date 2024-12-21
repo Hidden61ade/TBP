@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class MessageSend : MonoBehaviour
 {
-    public string currentCharacter = "Adam";
+    public static string currentCharacter = "Adam";
     public Transform contentParent;
     public GameObject MsgPrefab;
     public string contToSend;

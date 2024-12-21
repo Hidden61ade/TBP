@@ -3719,13 +3719,13 @@ MonoBehaviour:
     type: 3}
   lockedItemPrefab: {fileID: 3716086853393495817, guid: 7fc34079518d2b040bf7c357fc90852e,
     type: 3}
-  columnsCount: 4
+  columnsCount: 6
   spacing: 15
   cellSize: 150
   nextPageButton: {fileID: 2232714411977013062}
   prevPageButton: {fileID: 6659899131671844928}
   pageText: {fileID: 5446293797353513535}
-  itemsPerPage: 12
+  itemsPerPage: 18
   detailPanel: {fileID: 1935862939369552992}
   detailImage: {fileID: 651729488811930215}
   itemNameText: {fileID: 4366006746905926904}
@@ -4503,9 +4503,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.2901961, g: 0.2901961, b: 0.2901961, a: 1}
-    m_HighlightedColor: {r: 0.4, g: 0.4, b: 0.4, a: 1}
-    m_PressedColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.690566, g: 0.690566, b: 0.690566, a: 1}
+    m_PressedColor: {r: 0.4641509, g: 0.4641509, b: 0.4641509, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.101960786, g: 0.101960786, b: 0.101960786, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -6073,9 +6073,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.2901961, g: 0.2901961, b: 0.2901961, a: 1}
-    m_HighlightedColor: {r: 0.4, g: 0.4, b: 0.4, a: 1}
-    m_PressedColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.690566, g: 0.690566, b: 0.690566, a: 1}
+    m_PressedColor: {r: 0.4641509, g: 0.4641509, b: 0.4641509, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.101960786, g: 0.101960786, b: 0.101960786, a: 0.5019608}
     m_ColorMultiplier: 1

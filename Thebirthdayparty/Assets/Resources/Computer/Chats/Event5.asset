@@ -1,0 +1,214 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c5df3ec13761874594a1b172da83f25, type: 3}
+  m_Name: Event5
+  m_EditorClassIdentifier: 
+  EventId: 
+  msgDatas:
+  - hasChoice: 0
+    Content: "Adam: Thought about what to watch?"
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: "Adam: George always said our taste was too conventional."
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 1
+    Content: "#SYS:PASS"
+    Choices: 
+    - $How about sci-fi?#ST(SF)
+    - $A documentary might be better.#ST(DC)
+    - $Let George choose.#ST(LG)
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: "$(SF)Adam: He does love sci-fi.;#SYS:FP$"
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 1
+    Content: "$(SF)Adam: Remember what we used to watch most?;#SYS:FP$"
+    Choices: 
+    - "$2001: A Space Odyssey, fansy classic.#AF(2)"
+    - $The Matrix, we've watched it countless times.#AF(1)
+    - $Can't really remember.#AF(-1)
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: "#SYS:PASS"
+    Choices: []
+    isSecondary: 1
+    mapping: 0
+  - hasChoice: 0
+    Content: "Adam: Yeah, that's George's favorite classic."
+    Choices: []
+    isSecondary: 1
+    mapping: 1
+  - hasChoice: 0
+    Content: "Adam: Definitely a staple. Can't count how many times we watched that in college."
+    Choices: []
+    isSecondary: 1
+    mapping: 2
+  - hasChoice: 0
+    Content: "Adam: Hmm... Maybe it's been too long since we did this. Could use a bit of nostalgia."
+    Choices: []
+    isSecondary: 1
+    mapping: 3
+  - hasChoice: 0
+    Content: "$(DC)Adam: Maybe we need something more practical;#SYS:FP$"
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 1
+    Content: "$(DC)Adam: Like tech developement documentary?;#SYS:FP$"
+    Choices: 
+    - $Silicon Valley Revolution, perfect for us three.#AF(2)
+    - $The Future of AI, quite fitting.#AF(1)
+    - $Any one will do.#AF(-1)
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: "#SYS:PASS"
+    Choices: []
+    isSecondary: 1
+    mapping: 0
+  - hasChoice: 0
+    Content: "Adam: That’s a good one."
+    Choices: []
+    isSecondary: 1
+    mapping: 1
+  - hasChoice: 0
+    Content: "Adam: AI’s been on my mind a lot lately... and it’s George’s thing too."
+    Choices: []
+    isSecondary: 1
+    mapping: 2
+  - hasChoice: 0
+    Content: "Adam: Hmm, not exactly the most enthusiastic choice, but alright."
+    Choices: []
+    isSecondary: 1
+    mapping: 3
+  - hasChoice: 0
+    Content: "$(LG)Adam: Well I guess we need to prepare it ahead.;#SYS:FP$"
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 1
+    Content: "$(LG)Adam: I mean, what do you think George would like?;#SYS:FP$"
+    Choices: 
+    - $How about sci-fi?#ST(SF)
+    - $A documentary might be better.#ST(DC)
+    - 
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: "$(LG,SF)Adam: He does love sci-fi.;#SYS:FP$"
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 1
+    Content: "$(LG,SF)Adam: Remember what we used to watch most?;#SYS:FP$"
+    Choices: 
+    - "$2001: A Space Odyssey, fansy classic.#AF(1)"
+    - The Matrix, we've watched it countless times.
+    - $Can't really remember.#AF(-1)
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: "#SYS:PASS"
+    Choices: []
+    isSecondary: 1
+    mapping: 0
+  - hasChoice: 0
+    Content: "Adam: Yeah, that's George's favorite classic."
+    Choices: []
+    isSecondary: 1
+    mapping: 1
+  - hasChoice: 0
+    Content: "Adam: Definitely a staple. Can't count how many times we watched that in college."
+    Choices: []
+    isSecondary: 1
+    mapping: 2
+  - hasChoice: 0
+    Content: "Adam: Hmm... Maybe it's been too long since we did this. Could use a bit of nostalgia."
+    Choices: []
+    isSecondary: 1
+    mapping: 3
+  - hasChoice: 0
+    Content: "$(LG,DC)Adam: Maybe we need something more practical;#SYS:FP$"
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 1
+    Content: "$(LG,DC)Adam: Like tech developement documentary?;#SYS:FP$"
+    Choices: 
+    - $Silicon Valley Revolution, perfect for us three.#AF(1)
+    - The Future of AI, quite fitting.
+    - $Any one will do.#AF(-1)
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: "#SYS:PASS"
+    Choices: []
+    isSecondary: 1
+    mapping: 0
+  - hasChoice: 0
+    Content: "Adam: That’s a good one."
+    Choices: []
+    isSecondary: 1
+    mapping: 1
+  - hasChoice: 0
+    Content: "Adam: AI’s been on my mind a lot lately... and it’s George’s thing too."
+    Choices: []
+    isSecondary: 1
+    mapping: 2
+  - hasChoice: 0
+    Content: "Adam: Hmm, not exactly the most enthusiastic choice, but alright."
+    Choices: []
+    isSecondary: 1
+    mapping: 3
+  - hasChoice: 0
+    Content: "Adam: Okay, that's settled then."
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: "Adam: Hope this helps him relax a bit."
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: "Adam: He's been under a lot of pressure lately."
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: "Adam: ..."
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: "Adam: Matt..."
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: "Adam: There's something I wanted to tell you in person."
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: "Adam: But I guess it'll have to wait until the party."
+    Choices: []
+    isSecondary: 0
+    mapping: 0

@@ -192,9 +192,7 @@ public class ChatController : MonoSingleton<ChatController>
             {
                 TypeEventSystem.Global.Send<OnChoiceActivated>(new(currentNode.choices));
                 yield return new WaitUntil(() => { return choice != -1; });
-                yield return new WaitForSeconds(1);
                 currentNode = currentNode.linkToBranches[choice] ?? currentNode.linkToBranches[0];
-                continue;
             }
             else
             {

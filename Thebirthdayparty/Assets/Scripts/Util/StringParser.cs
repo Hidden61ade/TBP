@@ -10,7 +10,10 @@ public static class ParseString
         {"Departure",()=>Departure},
         {"Cabin",()=>Cabin},
         {"OldComputer",()=>OldComputer},
-        {"TrioPhoto",()=>TrioPhoto}
+        {"TrioPhoto",()=>TrioPhoto},
+        {"GS1",()=>GS1},
+        {"GS2",()=>GS2},
+        {"GS3",()=>GS3}
     };
     #region Variables Check
     private static bool Napkin
@@ -42,9 +45,32 @@ public static class ParseString
             return false;
         }
     }
-    private static bool TrioPhoto{
-        get{
+    private static bool TrioPhoto
+    {
+        get
+        {
             return true;
+        }
+    }
+    private static bool GS1
+    {
+        get
+        {
+            return GameSaveManager.Instance.currentSave.affinity["George"] >= 5;
+        }
+    }
+    private static bool GS2
+    {
+        get
+        {
+            return GameSaveManager.Instance.currentSave.affinity["George"] <= 5 && GameSaveManager.Instance.currentSave.affinity["George"] > 0;
+        }
+    }
+    private static bool GS3
+    {
+        get
+        {
+            return GameSaveManager.Instance.currentSave.affinity["George"]<=0;
         }
     }
     #endregion
