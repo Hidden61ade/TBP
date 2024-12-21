@@ -1,13 +1,19 @@
+using System.Collections;
 using QFramework;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameTimeManager : MonoSingleton<GameTimeManager>
 {
     private void Start() {
         TypeEventSystem.Global.Register<NextPeriodEvent>(e=>{
-            GoToNextPeriod();
+            StartCoroutine(AskForNext());
         }).UnRegisterWhenGameObjectDestroyed(gameObject);
         DontDestroyOnLoad(gameObject);
+    }
+    IEnumerator AskForNext(){
+        yield return new WaitUntil(()=>SceneManager.GetActiveScene().name.Equals("SampleScene"));
+        GoToNextPeriod();
     }
     public int GetCurrentCycle()
     {

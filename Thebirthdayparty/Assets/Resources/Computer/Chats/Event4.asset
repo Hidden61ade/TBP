@@ -15,6 +15,11 @@ MonoBehaviour:
   EventId: 
   msgDatas:
   - hasChoice: 0
+    Content: '#LQ'
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
     Content: "Adam: About the party food..."
     Choices: []
     isSecondary: 0
@@ -140,6 +145,16 @@ MonoBehaviour:
     mapping: 0
   - hasChoice: 0
     Content: "Adam: Hope it'll make him happy."
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: '#NP'
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: '#RQ'
     Choices: []
     isSecondary: 0
     mapping: 0

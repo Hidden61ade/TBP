@@ -15,6 +15,11 @@ MonoBehaviour:
   EventId: 3
   msgDatas:
   - hasChoice: 0
+    Content: '#LQ'
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
     Content: 'Adam: Matt, about the party theme...'
     Choices: []
     isSecondary: 0
@@ -181,6 +186,16 @@ MonoBehaviour:
 
       I think George will like
       it.'
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: '#NP'
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: '#RQ'
     Choices: []
     isSecondary: 0
     mapping: 0

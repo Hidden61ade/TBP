@@ -15,6 +15,11 @@ MonoBehaviour:
   EventId: 
   msgDatas:
   - hasChoice: 0
+    Content: '#LQ'
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
     Content: "Adam: Thought about what to watch?"
     Choices: []
     isSecondary: 0
@@ -209,6 +214,16 @@ MonoBehaviour:
     mapping: 0
   - hasChoice: 0
     Content: "Adam: But I guess it'll have to wait until the party."
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: '#NP'
+    Choices: []
+    isSecondary: 0
+    mapping: 0
+  - hasChoice: 0
+    Content: '#RQ'
     Choices: []
     isSecondary: 0
     mapping: 0
